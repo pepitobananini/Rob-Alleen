@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rob Allen Mexico - Equipo de Pesca Submarina de Alto Rendimiento. Arpones, focos de buceo y accesorios profesionales.">
+    <title>Rob Allen Mexico - Pesca Submarina de Alto Rendimiento</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#hero">
+                        <span class="logo-text">ROB ALLEN</span>
+                        <span class="logo-subtitle">MEXICO</span>
+                    </a>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="nav-menu" id="navMenu">
+                    <ul>
+                        <li><a href="#hero" class="nav-link">Inicio</a></li>
+                        <li><a href="catalog.html" class="nav-link">Productos</a></li>
+                        <li><a href="#about" class="nav-link">Nosotros</a></li>
+                        <li><a href="#testimonials" class="nav-link">Testimonios</a></li>
+                        <li><a href="#footer" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Hamburger Menu -->
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title fade-in-up">ROB ALLEN MEXICO</h1>
+            <p class="hero-subtitle fade-in-up delay-1">Equipo de Pesca Submarina de Alto Rendimiento</p>
+            <p class="hero-description fade-in-up delay-2">Arpones profesionales, focos de buceo y accesorios para cazadores submarinos exigentes</p>
+            <button class="btn btn-primary fade-in-up delay-3" id="heroCtaBtn" onclick="window.location.href='catalog.html'">
+                <span>Explora Nuestros Productos</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS SECTION -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate-on-scroll">Productos Destacados</h2>
+                <p class="section-subtitle animate-on-scroll">Equipamiento profesional para los mejores cazadores submarinos</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Product 1: Carbon Timberline -->
+                <div class="product-card animate-on-scroll">
+                    <div class="product-image-wrapper">
+                        <div class="product-badge">Bestseller</div>
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=600&fit=crop" 
+                             alt="Arpón Carbon Timberline" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-view">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Carbon Timberline</h3>
+                        <p class="product-description">Arpón de carbono de alto rendimiento, ideal para aguas claras y pesca de precisión</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Carbono premium</span>
+                            <span><i class="fas fa-check"></i> Ultra ligero</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$8,499 MXN</span>
+                            <button class="btn btn-secondary btn-small">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: GT Triple -->
+                <div class="product-card animate-on-scroll delay-1">
+                    <div class="product-image-wrapper">
+                        <div class="product-badge new">Nuevo</div>
+                        <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600&h=600&fit=crop" 
+                             alt="Arpón GT Triple" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-view">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GT Triple</h3>
+                        <p class="product-description">Potencia extrema para peces grandes. Triple banda para máximo impacto</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Triple banda</span>
+                            <span><i class="fas fa-check"></i> Pesca mayor</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$12,999 MXN</span>
+                            <button class="btn btn-secondary btn-small">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Mahi Triple -->
+                <div class="product-card animate-on-scroll delay-2">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=600&fit=crop" 
+                             alt="Arpón Mahi Triple" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-view">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mahi Triple</h3>
+                        <p class="product-description">Diseño versátil para aguas abiertas. Precisión y potencia equilibradas</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Versátil</span>
+                            <span><i class="fas fa-check"></i> Alta precisión</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$10,499 MXN</span>
+                            <button class="btn btn-secondary btn-small">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: Blue Water -->
+                <div class="product-card animate-on-scroll delay-3">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1682687220208-22d7a2543e88?w=600&h=600&fit=crop" 
+                             alt="Arpón Blue Water" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-view">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Blue Water</h3>
+                        <p class="product-description">El compañero perfecto para expediciones en aguas profundas y azules</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Aguas profundas</span>
+                            <span><i class="fas fa-check"></i> Máxima distancia</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$11,799 MXN</span>
+                            <button class="btn btn-secondary btn-small">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5: Divers Light 1300L -->
+                <div class="product-card animate-on-scroll delay-4">
+                    <div class="product-image-wrapper">
+                        <div class="product-badge hot">Popular</div>
+                        <img src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=600&h=600&fit=crop" 
+                             alt="Foco Divers Light 1300L" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-view">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Divers Light 1300L</h3>
+                        <p class="product-description">Potente foco de buceo con 1300 lúmenes. Iluminación profesional submarina</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> 1300 lúmenes</span>
+                            <span><i class="fas fa-check"></i> Recargable</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$4,999 MXN</span>
+                            <button class="btn btn-secondary btn-small">Agregar al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US / WHY CHOOSE US SECTION -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <!-- Left Column: Image -->
+                <div class="about-image animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1682687220795-796d3f6f7000?w=800&h=1000&fit=crop" 
+                         alt="Buceador profesional con equipo Rob Allen">
+                    <div class="about-image-overlay">
+                        <div class="stat-box">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Años de Experiencia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Content -->
+                <div class="about-text animate-on-scroll">
+                    <span class="about-label">¿Por qué elegirnos?</span>
+                    <h2 class="about-title">Pasión por el Buceo, Compromiso con la Calidad</h2>
+                    <div class="about-divider"></div>
+                    
+                    <p class="about-description">
+                        En <strong>Rob Allen Mexico</strong>, somos más que una tienda de equipo. Somos una comunidad 
+                        de apasionados por la pesca submarina que entiende las necesidades de cada cazador submarino.
+                    </p>
+                    
+                    <p class="about-description">
+                        Ofrecemos únicamente productos de la más alta calidad, probados en las condiciones más 
+                        exigentes del océano. Nuestro equipo está diseñado para durar y rendir al máximo nivel.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="about-feature-item">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Garantía Total</h4>
+                                <p>Respaldamos cada producto</p>
+                            </div>
+                        </div>
+
+                        <div class="about-feature-item">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h4>Comunidad Activa</h4>
+                                <p>Miles de buceadores confían en nosotros</p>
+                            </div>
+                        </div>
+
+                        <div class="about-feature-item">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div>
+                                <h4>Asesoría Experta</h4>
+                                <p>Te ayudamos a elegir lo mejor</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary">Conoce Más Sobre Nosotros</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate-on-scroll">Lo Que Dicen Nuestros Clientes</h2>
+                <p class="section-subtitle animate-on-scroll">Experiencias reales de cazadores submarinos profesionales</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "El Carbon Timberline cambió por completo mi forma de pescar. La precisión y potencia 
+                        son incomparables. He logrado capturas que antes parecían imposibles."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100&h=100&fit=crop" alt="Carlos Mendoza">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Carlos Mendoza</h4>
+                            <p class="author-role">Pescador Profesional - Cabo San Lucas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card animate-on-scroll delay-1">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "El servicio al cliente es excepcional. Me asesoraron perfectamente para elegir el 
+                        GT Triple y no pudo haber sido mejor elección. Calidad premium en todos los aspectos."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?w=100&h=100&fit=crop" alt="Ana Rodríguez">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Ana Rodríguez</h4>
+                            <p class="author-role">Instructora de Buceo - Cozumel</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card animate-on-scroll delay-2">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Llevo más de 10 años en la pesca submarina y el equipo Rob Allen es simplemente el mejor. 
+                        El Divers Light 1300L es imprescindible para mis inmersiones nocturnas."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Miguel Torres">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Miguel Torres</h4>
+                            <p class="author-role">Campeón Nacional - Veracruz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2 class="cta-title">¿Listo para la Mejor Experiencia de Pesca Submarina?</h2>
+                <p class="cta-description">
+                    Únete a nuestra comunidad y recibe ofertas exclusivas, consejos de expertos 
+                    y las últimas novedades en equipamiento profesional.
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-large" onclick="window.location.href='catalog.html'">Ver Catálogo Completo</button>
+                    <button class="btn btn-outline btn-large">Suscríbete al Newsletter</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Column 1: Logo & Info -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="logo-text">ROB ALLEN</span>
+                        <span class="logo-subtitle">MEXICO</span>
+                    </div>
+                    <p class="footer-description">
+                        Tu aliado en la pesca submarina desde 2009. Equipamiento profesional 
+                        para cazadores submarinos exigentes.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products">Productos</a></li>
+                        <li><a href="#about">Sobre Nosotros</a></li>
+                        <li><a href="#">Blog & Consejos</a></li>
+                        <li><a href="#">Garantía</a></li>
+                        <li><a href="#">Envíos y Devoluciones</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Categories -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Categorías</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Arpones</a></li>
+                        <li><a href="#">Focos de Buceo</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                        <li><a href="#">Líneas y Fleches</a></li>
+                        <li><a href="#">Equipamiento Completo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Playa del Carmen, Q. Roo<br>México</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+52 (984) 123-4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@roballenmexico.mx</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rob Allen Mexico. Todos los derechos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidad</a>
+                    <span>|</span>
+                    <a href="#">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
