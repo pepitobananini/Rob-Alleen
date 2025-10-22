@@ -704,3 +704,4 @@ window.addEventListener('scroll', () => {
 console.log('%c🛒 Catálogo Rob Allen Mexico', 'font-size: 18px; color: #62B6CB; font-weight: bold;');
 console.log('%cFuncionalidades: Filtros, Ordenamiento, Carrito, Vista Rápida', 'font-size: 12px; color: #1B4965;');
 
+
