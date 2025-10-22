@@ -105,7 +105,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: 3rem;
 }
 
 .nav-menu-left {
@@ -154,7 +154,7 @@ ul {
 
 .nav-menu ul {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: 2.5rem;
 }
 
 .nav-link {

@@ -4,7 +4,8 @@
 
 const header = document.getElementById('header');
 const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('navMenu');
+const navMenuLeft = document.getElementById('navMenuLeft');
+const navMenuRight = document.getElementById('navMenuRight');
 const navLinks = document.querySelectorAll('.nav-link');
 const heroCtaBtn = document.getElementById('heroCtaBtn');
 
@@ -45,10 +46,13 @@ window.addEventListener('scroll', () => {
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+    if (navMenuLeft) navMenuLeft.classList.toggle('active');
+    if (navMenuRight) navMenuRight.classList.toggle('active');
     
     // Prevent body scroll when menu is open
-    if (navMenu.classList.contains('active')) {
+    const isActive = (navMenuLeft && navMenuLeft.classList.contains('active')) || 
+                     (navMenuRight && navMenuRight.classList.contains('active'));
+    if (isActive) {
         document.body.style.overflow = 'hidden';
     } else {
         document.body.style.overflow = 'auto';
@@ -58,6 +62,8 @@ hamburger.addEventListener('click', () => {
 // Close menu when clicking on a nav link
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        
         // Don't close menu if it's a dropdown parent on mobile
         const parentLi = link.closest('.has-dropdown');
         if (parentLi && window.innerWidth <= 768) {
@@ -66,17 +72,29 @@ navLinks.forEach(link => {
             return;
         }
         
+        // Only prevent default for anchor links, not for page navigation
+        if (href && href.startsWith('#')) {
+            // Let smooth scroll handler deal with it
+        }
+        
         hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        if (navMenuLeft) navMenuLeft.classList.remove('active');
+        if (navMenuRight) navMenuRight.classList.remove('active');
         document.body.style.overflow = 'auto';
     });
 });
 
 // Close menu when clicking outside
 document.addEventListener('click', (e) => {
-    if (!navMenu.contains(e.target) && !hamburger.contains(e.target) && navMenu.classList.contains('active')) {
+    const isMenuActive = (navMenuLeft && navMenuLeft.classList.contains('active')) || 
+                         (navMenuRight && navMenuRight.classList.contains('active'));
+    const clickedInsideMenu = (navMenuLeft && navMenuLeft.contains(e.target)) || 
+                              (navMenuRight && navMenuRight.contains(e.target));
+    
+    if (!clickedInsideMenu && !hamburger.contains(e.target) && isMenuActive) {
         hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
+        if (navMenuLeft) navMenuLeft.classList.remove('active');
+        if (navMenuRight) navMenuRight.classList.remove('active');
         document.body.style.overflow = 'auto';
     }
 });
@@ -88,20 +106,24 @@ document.addEventListener('click', (e) => {
 
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
-        
         const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
         
-        if (targetSection) {
-            const headerHeight = header.offsetHeight;
-            const targetPosition = targetSection.offsetTop - headerHeight;
+        // Only do smooth scroll for anchor links (#)
+        if (targetId && targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
             
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+            if (targetSection) {
+                const headerHeight = header.offsetHeight;
+                const targetPosition = targetSection.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
         }
+        // For normal links (catalog.html, distribuidores.html, etc), let them navigate normally
     });
 });
 
