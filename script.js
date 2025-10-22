@@ -113,7 +113,7 @@ navLinks.forEach(link => {
 if (heroCtaBtn) {
     heroCtaBtn.addEventListener('click', () => {
         // Navigate to catalog page
-        window.location.href = '../CATALOGO/catalog.html';
+        window.location.href = 'catalog.html';
     });
 }
 
@@ -328,7 +328,7 @@ catalogBtns.forEach(btn => {
     if (btn.textContent.includes('Catálogo')) {
         btn.addEventListener('click', () => {
             // Navigate to catalog page
-            window.location.href = '../CATALOGO/catalog.html';
+            window.location.href = 'catalog.html';
         });
     }
 });
@@ -474,7 +474,7 @@ if (carouselTrack && carouselPrevBtn && carouselNextBtn) {
             const productName = product.querySelector('h4').textContent;
             console.log(`Navigating to: ${productName}`);
             // Navigate to catalog with filter
-            window.location.href = `../CATALOGO/catalog.html?cat=carbon-series`;
+            window.location.href = `catalog.html?cat=carbon-series`;
         });
     });
 }

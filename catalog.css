@@ -2,9 +2,6 @@
    CATALOG SPECIFIC STYLES
    ============================== */
 
-/* Import CSS Variables */
-@import url('../INDEX/style.css');
-
 /* Catalog Hero Section */
 .catalog-hero {
     background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
