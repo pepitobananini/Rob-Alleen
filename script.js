@@ -57,7 +57,15 @@ hamburger.addEventListener('click', () => {
 
 // Close menu when clicking on a nav link
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
+        // Don't close menu if it's a dropdown parent on mobile
+        const parentLi = link.closest('.has-dropdown');
+        if (parentLi && window.innerWidth <= 768) {
+            e.preventDefault();
+            parentLi.classList.toggle('active');
+            return;
+        }
+        
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
         document.body.style.overflow = 'auto';
@@ -105,7 +113,7 @@ navLinks.forEach(link => {
 if (heroCtaBtn) {
     heroCtaBtn.addEventListener('click', () => {
         // Navigate to catalog page
-        window.location.href = 'catalog.html';
+        window.location.href = '../CATALOGO/catalog.html';
     });
 }
 
@@ -320,7 +328,7 @@ catalogBtns.forEach(btn => {
     if (btn.textContent.includes('Catálogo')) {
         btn.addEventListener('click', () => {
             // Navigate to catalog page
-            window.location.href = 'catalog.html';
+            window.location.href = '../CATALOGO/catalog.html';
         });
     }
 });
@@ -361,6 +369,115 @@ window.addEventListener('load', () => {
     // Add loaded class to body for any CSS animations
     document.body.classList.add('loaded');
 });
+
+
+// ==============================
+// CAROUSEL FUNCTIONALITY
+// ==============================
+
+const carouselTrack = document.getElementById('carouselTrack');
+const carouselPrevBtn = document.getElementById('carouselPrev');
+const carouselNextBtn = document.getElementById('carouselNext');
+
+if (carouselTrack && carouselPrevBtn && carouselNextBtn) {
+    let currentIndex = 0;
+    const slides = carouselTrack.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    
+    // Calculate how many slides to show based on screen width
+    function getSlidesToShow() {
+        const width = window.innerWidth;
+        if (width <= 480) return 1;
+        if (width <= 768) return 2;
+        if (width <= 1024) return 3;
+        return 4;
+    }
+    
+    function updateCarousel() {
+        const slidesToShow = getSlidesToShow();
+        const slideWidth = 100 / slidesToShow;
+        const maxIndex = Math.max(0, totalSlides - slidesToShow);
+        
+        // Ensure currentIndex is within bounds
+        if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
+        }
+        
+        const translateX = -(currentIndex * slideWidth);
+        carouselTrack.style.transform = `translateX(${translateX}%)`;
+        
+        // Update button states
+        carouselPrevBtn.disabled = currentIndex === 0;
+        carouselNextBtn.disabled = currentIndex >= maxIndex;
+        
+        // Update button opacity
+        carouselPrevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        carouselNextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+        carouselPrevBtn.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
+        carouselNextBtn.style.cursor = currentIndex >= maxIndex ? 'not-allowed' : 'pointer';
+    }
+    
+    // Next button
+    carouselNextBtn.addEventListener('click', () => {
+        const slidesToShow = getSlidesToShow();
+        const maxIndex = Math.max(0, totalSlides - slidesToShow);
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+    
+    // Previous button
+    carouselPrevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+    
+    // Touch/Swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carouselTrack.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    carouselTrack.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchStartX - touchEndX > swipeThreshold) {
+            // Swipe left - next slide
+            carouselNextBtn.click();
+        } else if (touchEndX - touchStartX > swipeThreshold) {
+            // Swipe right - previous slide
+            carouselPrevBtn.click();
+        }
+    }
+    
+    // Update on window resize
+    window.addEventListener('resize', () => {
+        updateCarousel();
+    });
+    
+    // Initialize carousel
+    updateCarousel();
+    
+    // Make carousel products clickable
+    const carouselProducts = document.querySelectorAll('.carousel-product');
+    carouselProducts.forEach(product => {
+        product.addEventListener('click', () => {
+            const productName = product.querySelector('h4').textContent;
+            console.log(`Navigating to: ${productName}`);
+            // Navigate to catalog with filter
+            window.location.href = `../CATALOGO/catalog.html?cat=carbon-series`;
+        });
+    });
+}
 
 
 // ==============================

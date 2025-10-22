@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -35,8 +35,63 @@
                 <nav class="nav-menu" id="navMenu">
                     <ul>
                         <li><a href="#hero" class="nav-link">Inicio</a></li>
-                        <li><a href="catalog.html" class="nav-link">Productos</a></li>
+                        <li class="has-dropdown">
+                            <a href="../CATALOGO/catalog.html" class="nav-link">Productos</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="menu-column">
+                                        <h3>Spearguns</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=basic-guns">Basic Guns</a></li>
+                                            <li><a href="catalog.html?cat=aluminium-series">Aluminium Series</a></li>
+                                            <li><a href="catalog.html?cat=carbon-series">Carbon Series</a></li>
+                                            <li><a href="catalog.html?cat=timberline-series">Timberline Series</a></li>
+                                            <li><a href="catalog.html?cat=spares">Spares</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Spears & Rubber</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=spears">Spears</a></li>
+                                            <li><a href="catalog.html?cat=barbs">Barbs & Tip Protectors</a></li>
+                                            <li><a href="catalog.html?cat=rubbers">Rubbers</a></li>
+                                            <li><a href="catalog.html?cat=floats">Floats & Flashers</a></li>
+                                            <li><a href="catalog.html?cat=reels">Reels</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Essential Gear</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=masks">Masks</a></li>
+                                            <li><a href="catalog.html?cat=snorkel">Snorkel</a></li>
+                                            <li><a href="catalog.html?cat=knives">Knives</a></li>
+                                            <li><a href="catalog.html?cat=fins">Fins</a></li>
+                                            <li><a href="catalog.html?cat=weight-belt">Weight Belt</a></li>
+                                            <li><a href="catalog.html?cat=torches">Torches</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Contact Protection</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=wetsuits">Wetsuits</a></li>
+                                            <li><a href="catalog.html?cat=rash-guards">Rash Guards</a></li>
+                                            <li><a href="catalog.html?cat=socks">Socks</a></li>
+                                            <li><a href="catalog.html?cat=gloves">Gloves</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Clothing & Accessories</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=t-shirts">T-Shirts</a></li>
+                                            <li><a href="catalog.html?cat=head-gear">Head Gear</a></li>
+                                            <li><a href="catalog.html?cat=bags">Bags</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                         <li><a href="#about" class="nav-link">Nosotros</a></li>
+                        <li><a href="../DISTRIBUIDORES/distribuidores.html" class="nav-link">Distribuidores</a></li>
                         <li><a href="#testimonials" class="nav-link">Testimonios</a></li>
                         <li><a href="#footer" class="nav-link">Contacto</a></li>
                     </ul>
@@ -59,7 +114,7 @@
             <h1 class="hero-title fade-in-up">ROB ALLEN MEXICO</h1>
             <p class="hero-subtitle fade-in-up delay-1">Equipo de Pesca Submarina de Alto Rendimiento</p>
             <p class="hero-description fade-in-up delay-2">Arpones profesionales, focos de buceo y accesorios para cazadores submarinos exigentes</p>
-            <button class="btn btn-primary fade-in-up delay-3" id="heroCtaBtn" onclick="window.location.href='catalog.html'">
+            <button class="btn btn-primary fade-in-up delay-3" id="heroCtaBtn" onclick="window.location.href='../CATALOGO/catalog.html'">
                 <span>Explora Nuestros Productos</span>
                 <i class="fas fa-arrow-right"></i>
             </button>
@@ -79,129 +134,112 @@
                 <p class="section-subtitle animate-on-scroll">Equipamiento profesional para los mejores cazadores submarinos</p>
             </div>
 
-            <div class="products-grid">
-                <!-- Product 1: Carbon Timberline -->
-                <div class="product-card animate-on-scroll">
-                    <div class="product-image-wrapper">
-                        <div class="product-badge">Bestseller</div>
-                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=600&fit=crop" 
-                             alt="Arpón Carbon Timberline" 
-                             class="product-image">
-                        <div class="product-overlay">
-                            <button class="btn-view">Ver Detalles</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Carbon Timberline</h3>
-                        <p class="product-description">Arpón de carbono de alto rendimiento, ideal para aguas claras y pesca de precisión</p>
-                        <div class="product-features">
-                            <span><i class="fas fa-check"></i> Carbono premium</span>
-                            <span><i class="fas fa-check"></i> Ultra ligero</span>
-                        </div>
-                        <div class="product-footer">
-                            <span class="product-price">$8,499 MXN</span>
-                            <button class="btn btn-secondary btn-small">Agregar al Carrito</button>
-                        </div>
-                    </div>
-                </div>
+            <!-- SPEARGUNS CAROUSEL -->
+            <div class="carousel-section animate-on-scroll">
+                <h3 class="carousel-title">Carbon Series</h3>
+                
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-prev" id="carouselPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="carousel-track-container">
+                        <div class="carousel-track" id="carouselTrack">
+                            <!-- Carousel Slide 1: Carbon Timberline -->
+                            <div class="carousel-slide">
+                                <div class="carousel-product">
+                                    <div class="carousel-badge bestseller">Bestseller</div>
+                                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop" 
+                                         alt="Carbon Timberline">
+                                    <h4>Carbon Timberline</h4>
+                                </div>
+                            </div>
 
-                <!-- Product 2: GT Triple -->
-                <div class="product-card animate-on-scroll delay-1">
-                    <div class="product-image-wrapper">
-                        <div class="product-badge new">Nuevo</div>
-                        <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600&h=600&fit=crop" 
-                             alt="Arpón GT Triple" 
-                             class="product-image">
-                        <div class="product-overlay">
-                            <button class="btn-view">Ver Detalles</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">GT Triple</h3>
-                        <p class="product-description">Potencia extrema para peces grandes. Triple banda para máximo impacto</p>
-                        <div class="product-features">
-                            <span><i class="fas fa-check"></i> Triple banda</span>
-                            <span><i class="fas fa-check"></i> Pesca mayor</span>
-                        </div>
-                        <div class="product-footer">
-                            <span class="product-price">$12,999 MXN</span>
-                            <button class="btn btn-secondary btn-small">Agregar al Carrito</button>
-                        </div>
-                    </div>
-                </div>
+                            <!-- Carousel Slide 2: GT Triple -->
+                            <div class="carousel-slide">
+                                <div class="carousel-product">
+                                    <div class="carousel-badge new">Nuevo</div>
+                                    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=400&fit=crop" 
+                                         alt="GT Triple">
+                                    <h4>GT Triple</h4>
+                                </div>
+                            </div>
 
-                <!-- Product 3: Mahi Triple -->
-                <div class="product-card animate-on-scroll delay-2">
-                    <div class="product-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=600&fit=crop" 
-                             alt="Arpón Mahi Triple" 
-                             class="product-image">
-                        <div class="product-overlay">
-                            <button class="btn-view">Ver Detalles</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Mahi Triple</h3>
-                        <p class="product-description">Diseño versátil para aguas abiertas. Precisión y potencia equilibradas</p>
-                        <div class="product-features">
-                            <span><i class="fas fa-check"></i> Versátil</span>
-                            <span><i class="fas fa-check"></i> Alta precisión</span>
-                        </div>
-                        <div class="product-footer">
-                            <span class="product-price">$10,499 MXN</span>
-                            <button class="btn btn-secondary btn-small">Agregar al Carrito</button>
-                        </div>
-                    </div>
-                </div>
+                            <!-- Carousel Slide 3: Mahi Triple -->
+                            <div class="carousel-slide">
+                                <div class="carousel-product">
+                                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop" 
+                                         alt="Mahi Triple">
+                                    <h4>Mahi Triple</h4>
+                                </div>
+                            </div>
 
-                <!-- Product 4: Blue Water -->
-                <div class="product-card animate-on-scroll delay-3">
-                    <div class="product-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1682687220208-22d7a2543e88?w=600&h=600&fit=crop" 
-                             alt="Arpón Blue Water" 
-                             class="product-image">
-                        <div class="product-overlay">
-                            <button class="btn-view">Ver Detalles</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Blue Water</h3>
-                        <p class="product-description">El compañero perfecto para expediciones en aguas profundas y azules</p>
-                        <div class="product-features">
-                            <span><i class="fas fa-check"></i> Aguas profundas</span>
-                            <span><i class="fas fa-check"></i> Máxima distancia</span>
-                        </div>
-                        <div class="product-footer">
-                            <span class="product-price">$11,799 MXN</span>
-                            <button class="btn btn-secondary btn-small">Agregar al Carrito</button>
-                        </div>
-                    </div>
-                </div>
+                            <!-- Carousel Slide 4: Blue Water -->
+                            <div class="carousel-slide">
+                                <div class="carousel-product">
+                                    <img src="https://images.unsplash.com/photo-1682687220208-22d7a2543e88?w=400&h=400&fit=crop" 
+                                         alt="Blue Water">
+                                    <h4>Blue Water</h4>
+                                </div>
+                            </div>
 
-                <!-- Product 5: Divers Light 1300L -->
-                <div class="product-card animate-on-scroll delay-4">
-                    <div class="product-image-wrapper">
-                        <div class="product-badge hot">Popular</div>
-                        <img src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=600&h=600&fit=crop" 
-                             alt="Foco Divers Light 1300L" 
-                             class="product-image">
-                        <div class="product-overlay">
-                            <button class="btn-view">Ver Detalles</button>
+                            <!-- Carousel Slide 5: Digital Camo -->
+                            <div class="carousel-slide">
+                                <div class="carousel-product">
+                                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop" 
+                                         alt="Digital Camo">
+                                    <h4>Digital Camo</h4>
+                                </div>
+                            </div>
+
+                            <!-- Carousel Slide 6: Dorado Camo -->
+                            <div class="carousel-slide">
+                                <div class="carousel-product">
+                                    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=400&fit=crop" 
+                                         alt="Dorado Camo">
+                                    <h4>Dorado Camo</h4>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Divers Light 1300L</h3>
-                        <p class="product-description">Potente foco de buceo con 1300 lúmenes. Iluminación profesional submarina</p>
-                        <div class="product-features">
-                            <span><i class="fas fa-check"></i> 1300 lúmenes</span>
-                            <span><i class="fas fa-check"></i> Recargable</span>
-                        </div>
-                        <div class="product-footer">
-                            <span class="product-price">$4,999 MXN</span>
-                            <button class="btn btn-secondary btn-small">Agregar al Carrito</button>
-                        </div>
-                    </div>
+                    
+                    <button class="carousel-btn carousel-next" id="carouselNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
+            </div>
+
+            <!-- CATEGORY CARDS -->
+            <div class="category-cards animate-on-scroll">
+                <!-- Wetsuits Card -->
+                <a href="../CATALOGO/catalog.html?cat=wetsuits" class="category-card">
+                    <div class="category-card-image">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop" 
+                             alt="Wetsuits Collection">
+                        <div class="category-card-overlay">
+                            <div class="category-card-content">
+                                <h3>Wetsuit Range</h3>
+                                <p>Colección completa de trajes de neopreno profesionales</p>
+                                <span class="category-btn">Ver Más <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Essential Gear Card -->
+                <a href="../CATALOGO/catalog.html?cat=masks" class="category-card">
+                    <div class="category-card-image">
+                        <img src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=800&h=600&fit=crop" 
+                             alt="Máscaras y Equipo Esencial">
+                        <div class="category-card-overlay">
+                            <div class="category-card-content">
+                                <h3>Máscaras & Accesorios</h3>
+                                <p>Equipo esencial para tu seguridad y comodidad</p>
+                                <span class="category-btn">Ver Más <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -370,7 +408,7 @@
                     y las últimas novedades en equipamiento profesional.
                 </p>
                 <div class="cta-buttons">
-                    <button class="btn btn-primary btn-large" onclick="window.location.href='catalog.html'">Ver Catálogo Completo</button>
+                    <button class="btn btn-primary btn-large" onclick="window.location.href='../CATALOGO/catalog.html'">Ver Catálogo Completo</button>
                     <button class="btn btn-outline btn-large">Suscríbete al Newsletter</button>
                 </div>
             </div>
