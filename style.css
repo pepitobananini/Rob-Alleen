@@ -105,13 +105,23 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
 }
 
-.nav-menu {
+.nav-menu-left {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+}
+
+.nav-menu-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo {
+    flex-shrink: 0;
 }
 
 .logo a {
@@ -145,8 +155,6 @@ ul {
 .nav-menu ul {
     display: flex;
     gap: var(--spacing-lg);
-    justify-content: space-between;
-    width: 100%;
 }
 
 .nav-link {
