@@ -212,6 +212,16 @@
 
     <!-- HERO SECTION -->
     <section class="hero" id="hero">
+        <!-- Video Background -->
+        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+            <source src="https://videos.pexels.com/video-files/3045163/3045163-hd_1920_1080_30fps.mp4" type="video/mp4">
+            <!-- Alternative video sources -->
+            <source src="https://videos.pexels.com/video-files/2491284/2491284-hd_1920_1080_24fps.mp4" type="video/mp4">
+            <!-- Fallback image if video doesn't load -->
+        </video>
+        <div class="hero-fallback" style="display: none;">
+            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920&h=1080&fit=crop" alt="Underwater diving">
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title fade-in-up" data-i18n="hero.title">ROB ALLEN MEXICO</h1>

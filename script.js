@@ -443,7 +443,7 @@ navLinks.forEach(link => {
 if (heroCtaBtn) {
     heroCtaBtn.addEventListener('click', () => {
         // Navigate to catalog page
-        window.location.href = '../CATALOGO/catalog.html';
+        window.location.href = 'catalog.html';
     });
 }
 
@@ -702,7 +702,7 @@ window.addEventListener('load', () => {
 
 
 // ==============================
-// CAROUSEL FUNCTIONALITY - INFINITE LOOP
+// CAROUSEL FUNCTIONALITY - SIMPLE AND WORKING
 // ==============================
 
 const carouselTrack = document.getElementById('carouselTrack');
@@ -712,90 +712,80 @@ const carouselNextBtn = document.getElementById('carouselNext');
 if (carouselTrack && carouselPrevBtn && carouselNextBtn) {
     let currentIndex = 0;
     let isAnimating = false;
-    const originalSlides = carouselTrack.querySelectorAll('.carousel-slide');
-    const totalSlides = originalSlides.length;
-    
-    // Clone slides for infinite loop - clonar al final e inicio
-    const firstSlideClone = originalSlides[0].cloneNode(true);
-    const lastSlideClone = originalSlides[originalSlides.length - 1].cloneNode(true);
-    carouselTrack.appendChild(firstSlideClone);
-    carouselTrack.insertBefore(lastSlideClone, originalSlides[0]);
+    const slides = carouselTrack.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
     
     // Calculate how many slides to show based on screen width
     function getSlidesToShow() {
         const width = window.innerWidth;
-        if (width <= 768) return 1; // Móvil: 1 producto a la vez
+        if (width <= 768) return 1; // Móvil: 1 producto COMPLETO
         if (width <= 1024) return 2;
         return 4;
     }
     
-    function updateCarousel(instant = false) {
-        if (isAnimating && !instant) return;
+    function getSlideWidth() {
+        const slidesToShow = getSlidesToShow();
+        const containerWidth = carouselTrack.parentElement.offsetWidth;
+        const gap = 16; // 1rem = 16px
+        return (containerWidth - (gap * (slidesToShow - 1))) / slidesToShow;
+    }
+    
+    function updateCarousel() {
+        if (isAnimating) return;
+        
+        // Limitar índice
+        if (currentIndex < 0) {
+            currentIndex = 0;
+            return;
+        }
         
         const slidesToShow = getSlidesToShow();
-        const slideWidth = 100 / slidesToShow;
+        const maxIndex = Math.max(0, totalSlides - slidesToShow);
         
-        // Ajuste para loop infinito con slides clonados
-        let translateX = 0;
-        
-        if (currentIndex < 0) {
-            // Si estamos antes del primer slide, saltamos al último real
-            currentIndex = totalSlides - 1;
-            translateX = -((currentIndex + 1) * slideWidth);
-            carouselTrack.style.transition = 'none';
-            carouselTrack.style.transform = `translateX(${translateX}%)`;
-            setTimeout(() => {
-                carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-            }, 50);
-            return;
-        } else if (currentIndex >= totalSlides) {
-            // Si estamos después del último slide, saltamos al primero real
-            currentIndex = 0;
-            translateX = -((currentIndex + 1) * slideWidth);
-            carouselTrack.style.transition = 'none';
-            carouselTrack.style.transform = `translateX(${translateX}%)`;
-            setTimeout(() => {
-                carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-            }, 50);
-            return;
+        if (currentIndex > maxIndex) {
+            currentIndex = maxIndex;
         }
         
-        // Posición normal con ajuste para el slide clonado al inicio
-        translateX = -((currentIndex + 1) * slideWidth);
+        isAnimating = true;
+        const slideWidth = getSlideWidth();
+        const gap = 16;
+        const translateX = -(currentIndex * (slideWidth + gap));
         
-        if (instant) {
-            carouselTrack.style.transition = 'none';
-        } else {
-            carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-        }
+        carouselTrack.style.transition = 'transform 0.5s ease-out';
+        carouselTrack.style.transform = `translateX(${translateX}px)`;
         
-        carouselTrack.style.transform = `translateX(${translateX}%)`;
+        // Update button states
+        carouselPrevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+        carouselPrevBtn.style.pointerEvents = currentIndex === 0 ? 'none' : 'auto';
+        carouselNextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
+        carouselNextBtn.style.pointerEvents = currentIndex >= maxIndex ? 'none' : 'auto';
         
-        if (instant) {
+        setTimeout(() => {
             isAnimating = false;
-        } else {
-            isAnimating = true;
-            setTimeout(() => {
-                isAnimating = false;
-            }, 600);
-        }
+        }, 500);
     }
     
     // Next button
     carouselNextBtn.addEventListener('click', () => {
         if (isAnimating) return;
-        currentIndex++;
-        updateCarousel();
+        const slidesToShow = getSlidesToShow();
+        const maxIndex = Math.max(0, totalSlides - slidesToShow);
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
     });
     
     // Previous button
     carouselPrevBtn.addEventListener('click', () => {
         if (isAnimating) return;
-        currentIndex--;
-        updateCarousel();
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
     });
     
-    // Touch/Swipe support for mobile - mejorado
+    // Touch/Swipe support for mobile
     let touchStartX = 0;
     let touchEndX = 0;
     let isDragging = false;
@@ -813,67 +803,64 @@ if (carouselTrack && carouselPrevBtn && carouselNextBtn) {
         if (!isDragging || isAnimating) return;
         touchEndX = e.changedTouches[0].screenX;
         const diff = touchStartX - touchEndX;
-        const slidesToShow = getSlidesToShow();
-        const slideWidth = 100 / slidesToShow;
-        const currentTranslate = -((startTranslate + 1) * slideWidth);
-        const newTranslate = currentTranslate + (diff / carouselTrack.offsetWidth * 100);
-        carouselTrack.style.transform = `translateX(${newTranslate}%)`;
+        const slideWidth = getSlideWidth();
+        const gap = 16;
+        const currentTranslate = -(startTranslate * (slideWidth + gap));
+        const newTranslate = currentTranslate - diff;
+        carouselTrack.style.transform = `translateX(${newTranslate}px)`;
     }, { passive: true });
     
     carouselTrack.addEventListener('touchend', (e) => {
         if (!isDragging || isAnimating) return;
         isDragging = false;
-        carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        carouselTrack.style.transition = 'transform 0.5s ease-out';
         touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, { passive: true });
-    
-    function handleSwipe() {
-        const swipeThreshold = 80;
+        
+        const swipeThreshold = 50;
         const swipeDistance = Math.abs(touchStartX - touchEndX);
         
         if (swipeDistance < swipeThreshold) {
-            // Not enough swipe, return to current position
             updateCarousel();
             return;
         }
         
         if (touchStartX - touchEndX > swipeThreshold) {
-            // Swipe left - next slide
-            currentIndex++;
-            updateCarousel();
+            // Swipe left - next
+            const slidesToShow = getSlidesToShow();
+            const maxIndex = Math.max(0, totalSlides - slidesToShow);
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+            }
         } else if (touchEndX - touchStartX > swipeThreshold) {
-            // Swipe right - previous slide
-            currentIndex--;
-            updateCarousel();
-        } else {
-            updateCarousel();
+            // Swipe right - previous
+            if (currentIndex > 0) {
+                currentIndex--;
+            }
         }
-    }
+        
+        updateCarousel();
+    }, { passive: true });
     
     // Update on window resize
     let resizeTimeout;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-            updateCarousel(true);
+            currentIndex = Math.min(currentIndex, Math.max(0, totalSlides - getSlidesToShow()));
+            updateCarousel();
         }, 100);
     });
     
     // Initialize carousel
-    updateCarousel(true);
+    updateCarousel();
     
     // Make carousel products clickable
     const carouselProducts = document.querySelectorAll('.carousel-product');
     carouselProducts.forEach(product => {
         product.addEventListener('click', (e) => {
-            // Don't navigate if clicking the button
             if (e.target.closest('.carousel-product-btn')) {
                 return;
             }
-            const productName = product.querySelector('h4').textContent;
-            console.log(`Navigating to: ${productName}`);
-            // Navigate to catalog with filter
             window.location.href = `catalog.html?cat=carbon-series`;
         });
     });
