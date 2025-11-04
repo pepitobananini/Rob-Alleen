@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo completo de Rob Allen Mexico - Arpones, focos de buceo y accesorios de pesca submarina profesional">
+    <title>Catálogo - Rob Allen Mexico | Equipo de Pesca Submarina</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Left Menu -->
+                <nav class="nav-menu nav-menu-left" id="navMenuLeft">
+                    <ul>
+                        <li><a href="index.html" class="nav-link">Inicio</a></li>
+                        <li class="has-dropdown">
+                            <a href="catalog.html" class="nav-link active">Productos</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="menu-column">
+                                        <h3>Spearguns</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=basic-guns">Basic Guns</a></li>
+                                            <li><a href="catalog.html?cat=aluminium-series">Aluminium Series</a></li>
+                                            <li><a href="catalog.html?cat=carbon-series">Carbon Series</a></li>
+                                            <li><a href="catalog.html?cat=timberline-series">Timberline Series</a></li>
+                                            <li><a href="catalog.html?cat=spares">Spares</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Spears & Rubber</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=spears">Spears</a></li>
+                                            <li><a href="catalog.html?cat=barbs">Barbs & Tip Protectors</a></li>
+                                            <li><a href="catalog.html?cat=rubbers">Rubbers</a></li>
+                                            <li><a href="catalog.html?cat=floats">Floats & Flashers</a></li>
+                                            <li><a href="catalog.html?cat=reels">Reels</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Essential Gear</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=masks">Masks</a></li>
+                                            <li><a href="catalog.html?cat=snorkel">Snorkel</a></li>
+                                            <li><a href="catalog.html?cat=knives">Knives</a></li>
+                                            <li><a href="catalog.html?cat=fins">Fins</a></li>
+                                            <li><a href="catalog.html?cat=weight-belt">Weight Belt</a></li>
+                                            <li><a href="catalog.html?cat=torches">Torches</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Contact Protection</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=wetsuits">Wetsuits</a></li>
+                                            <li><a href="catalog.html?cat=rash-guards">Rash Guards</a></li>
+                                            <li><a href="catalog.html?cat=socks">Socks</a></li>
+                                            <li><a href="catalog.html?cat=gloves">Gloves</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Clothing & Accessories</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=t-shirts">T-Shirts</a></li>
+                                            <li><a href="catalog.html?cat=head-gear">Head Gear</a></li>
+                                            <li><a href="catalog.html?cat=bags">Bags</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Logo (Center) -->
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">ROB ALLEN</span>
+                        <span class="logo-subtitle">MEXICO</span>
+                    </a>
+                </div>
+
+                <!-- Right Menu -->
+                <nav class="nav-menu nav-menu-right" id="navMenuRight">
+                    <ul>
+                        <li><a href="distribuidores.html" class="nav-link">Distribuidores</a></li>
+                        <li><a href="index.html#footer" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Cart Icon -->
+                <div class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+
+                <!-- Hamburger Menu -->
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CATALOG HERO -->
+    <section class="catalog-hero">
+        <div class="container">
+            <div class="catalog-hero-content">
+                <h1 class="catalog-title">Catálogo Completo</h1>
+                <p class="catalog-subtitle">Equipamiento profesional de pesca submarina</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <span>Catálogo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTERS SECTION -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-wrapper">
+                <div class="filters-left">
+                    <h3>Filtrar por categoría:</h3>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="arpones">Arpones</button>
+                        <button class="filter-btn" data-filter="focos">Focos de Buceo</button>
+                        <button class="filter-btn" data-filter="accesorios">Accesorios</button>
+                        <button class="filter-btn" data-filter="lineas">Líneas y Fleches</button>
+                    </div>
+                </div>
+                <div class="filters-right">
+                    <div class="sort-select">
+                        <label for="sort">Ordenar por:</label>
+                        <select id="sort">
+                            <option value="featured">Destacados</option>
+                            <option value="price-low">Precio: Menor a Mayor</option>
+                            <option value="price-high">Precio: Mayor a Menor</option>
+                            <option value="name">Nombre A-Z</option>
+                            <option value="newest">Más Nuevos</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS CATALOG -->
+    <section class="catalog-products">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                
+                <!-- ARPONES -->
+                <div class="product-item" data-category="arpones" data-price="8499" data-featured="true">
+                    <div class="product-image-wrapper">
+                        <div class="product-badge bestseller">Bestseller</div>
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=600&fit=crop" 
+                             alt="Arpón Carbon Timberline" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Carbon Timberline</h3>
+                        <p class="product-description">Arpón de carbono de alto rendimiento, ideal para aguas claras y pesca de precisión</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Carbono premium</span>
+                            <span><i class="fas fa-check"></i> Ultra ligero</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$8,499 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="Carbon Timberline" data-price="8499">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="arpones" data-price="12999" data-featured="true">
+                    <div class="product-image-wrapper">
+                        <div class="product-badge new">Nuevo</div>
+                        <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600&h=600&fit=crop" 
+                             alt="Arpón GT Triple" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GT Triple</h3>
+                        <p class="product-description">Potencia extrema para peces grandes. Triple banda para máximo impacto</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Triple banda</span>
+                            <span><i class="fas fa-check"></i> Pesca mayor</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$12,999 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="GT Triple" data-price="12999">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="arpones" data-price="10499">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=600&fit=crop" 
+                             alt="Arpón Mahi Triple" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mahi Triple</h3>
+                        <p class="product-description">Diseño versátil para aguas abiertas. Precisión y potencia equilibradas</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Versátil</span>
+                            <span><i class="fas fa-check"></i> Alta precisión</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$10,499 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="Mahi Triple" data-price="10499">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="arpones" data-price="11799">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1682687220208-22d7a2543e88?w=600&h=600&fit=crop" 
+                             alt="Arpón Blue Water" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Blue Water</h3>
+                        <p class="product-description">El compañero perfecto para expediciones en aguas profundas y azules</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Aguas profundas</span>
+                            <span><i class="fas fa-check"></i> Máxima distancia</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$11,799 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="Blue Water" data-price="11799">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="arpones" data-price="6999">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=600&fit=crop" 
+                             alt="Arpón Timberline 90" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Timberline 90</h3>
+                        <p class="product-description">Versión compacta del Timberline, perfecta para principiantes y aguas poco profundas</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Compacto</span>
+                            <span><i class="fas fa-check"></i> Ideal principiantes</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$6,999 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="Timberline 90" data-price="6999">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="arpones" data-price="15999">
+                    <div class="product-image-wrapper">
+                        <div class="product-badge premium">Premium</div>
+                        <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600&h=600&fit=crop" 
+                             alt="Arpón GT Carbon" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">GT Carbon</h3>
+                        <p class="product-description">La versión más avanzada del GT con construcción de carbono puro</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Carbono puro</span>
+                            <span><i class="fas fa-check"></i> Máximo rendimiento</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$15,999 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="GT Carbon" data-price="15999">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FOCOS DE BUCEO -->
+                <div class="product-item" data-category="focos" data-price="4999" data-featured="true">
+                    <div class="product-image-wrapper">
+                        <div class="product-badge hot">Popular</div>
+                        <img src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=600&h=600&fit=crop" 
+                             alt="Foco Divers Light 1300L" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Divers Light 1300L</h3>
+                        <p class="product-description">Potente foco de buceo con 1300 lúmenes. Iluminación profesional submarina</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> 1300 lúmenes</span>
+                            <span><i class="fas fa-check"></i> Recargable</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$4,999 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="Divers Light 1300L" data-price="4999">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="focos" data-price="3499">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=600&h=600&fit=crop" 
+                             alt="Foco Divers Light 800L" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Divers Light 800L</h3>
+                        <p class="product-description">Foco compacto con 800 lúmenes, perfecto para buceo recreativo</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> 800 lúmenes</span>
+                            <span><i class="fas fa-check"></i> Compacto</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$3,499 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="Divers Light 800L" data-price="3499">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="focos" data-price="7999">
+                    <div class="product-image-wrapper">
+                        <div class="product-badge new">Nuevo</div>
+                        <img src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=600&h=600&fit=crop" 
+                             alt="Foco Pro Light 2000L" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Pro Light 2000L</h3>
+                        <p class="product-description">Foco profesional con 2000 lúmenes para expediciones extremas</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> 2000 lúmenes</span>
+                            <span><i class="fas fa-check"></i> Resistente agua</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$7,999 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="Pro Light 2000L" data-price="7999">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCESORIOS -->
+                <div class="product-item" data-category="accesorios" data-price="1299">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=600&fit=crop" 
+                             alt="Máscara de Buceo Pro" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Máscara Pro</h3>
+                        <p class="product-description">Máscara de buceo profesional con lente de vidrio templado</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Vidrio templado</span>
+                            <span><i class="fas fa-check"></i> Ajuste perfecto</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$1,299 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="Máscara Pro" data-price="1299">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="accesorios" data-price="899">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=600&fit=crop" 
+                             alt="Aletas de Buceo" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Aletas Pro</h3>
+                        <p class="product-description">Aletas de buceo de alta eficiencia para máxima propulsión</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Alta eficiencia</span>
+                            <span><i class="fas fa-check"></i> Ajustables</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$899 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="Aletas Pro" data-price="899">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="accesorios" data-price="1599">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=600&fit=crop" 
+                             alt="Traje de Neopreno" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Traje 3mm</h3>
+                        <p class="product-description">Traje de neopreno de 3mm para aguas templadas</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Neopreno 3mm</span>
+                            <span><i class="fas fa-check"></i> Aguas templadas</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$1,599 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="Traje 3mm" data-price="1599">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LÍNEAS Y FLECHES -->
+                <div class="product-item" data-category="lineas" data-price="599">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=600&fit=crop" 
+                             alt="Línea de Monofilamento" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Línea Monofilamento</h3>
+                        <p class="product-description">Línea de monofilamento de alta resistencia 1.5mm x 50m</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> 1.5mm x 50m</span>
+                            <span><i class="fas fa-check"></i> Alta resistencia</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$599 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="Línea Monofilamento" data-price="599">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="lineas" data-price="799">
+                    <div class="product-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=600&fit=crop" 
+                             alt="Fleche de Acero" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Fleche Acero</h3>
+                        <p class="product-description">Fleche de acero inoxidable con punta afilada para máxima penetración</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Acero inoxidable</span>
+                            <span><i class="fas fa-check"></i> Punta afilada</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$799 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="Fleche Acero" data-price="799">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-item" data-category="lineas" data-price="1299">
+                    <div class="product-image-wrapper">
+                        <div class="product-badge new">Nuevo</div>
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=600&fit=crop" 
+                             alt="Kit Línea Completa" 
+                             class="product-image">
+                        <div class="product-overlay">
+                            <button class="btn-quick-view">Vista Rápida</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Kit Línea Completa</h3>
+                        <p class="product-description">Kit completo con línea, fleche y todos los accesorios necesarios</p>
+                        <div class="product-features">
+                            <span><i class="fas fa-check"></i> Kit completo</span>
+                            <span><i class="fas fa-check"></i> Listo para usar</span>
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">$1,299 MXN</span>
+                            <button class="btn btn-primary btn-small add-to-cart" data-product="Kit Línea Completa" data-price="1299">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-wrapper">
+                <button class="btn btn-outline btn-large" id="loadMoreBtn">
+                    <span>Cargar Más Productos</span>
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Column 1: Logo & Info -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="logo-text">ROB ALLEN</span>
+                        <span class="logo-subtitle">MEXICO</span>
+                    </div>
+                    <p class="footer-description">
+                        Tu aliado en la pesca submarina desde 2009. Equipamiento profesional 
+                        para cazadores submarinos exigentes.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="catalog.html">Catálogo</a></li>
+                        <li><a href="index.html#about">Sobre Nosotros</a></li>
+                        <li><a href="#">Blog & Consejos</a></li>
+                        <li><a href="#">Garantía</a></li>
+                        <li><a href="#">Envíos y Devoluciones</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Categories -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Categorías</h4>
+                    <ul class="footer-links">
+                        <li><a href="catalog.html?filter=arpones">Arpones</a></li>
+                        <li><a href="catalog.html?filter=focos">Focos de Buceo</a></li>
+                        <li><a href="catalog.html?filter=accesorios">Accesorios</a></li>
+                        <li><a href="catalog.html?filter=lineas">Líneas y Fleches</a></li>
+                        <li><a href="catalog.html">Equipamiento Completo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Playa del Carmen, Q. Roo<br>México</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+52 (984) 123-4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@roballenmexico.mx</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rob Allen Mexico. Todos los derechos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidad</a>
+                    <span>|</span>
+                    <a href="#">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script src="catalog.js"></script>
+
+</body>
+</html>
+
+
+
+

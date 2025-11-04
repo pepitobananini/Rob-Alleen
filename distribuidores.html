@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Distribuidores Rob Allen Mexico - Encuentra nuestros distribuidores autorizados alrededor del mundo">
+    <title>Distribuidores - Rob Allen Mexico</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Leaflet CSS for Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="distribuidores.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Left Menu -->
+                <nav class="nav-menu nav-menu-left" id="navMenuLeft">
+                    <ul>
+                        <li><a href="index.html" class="nav-link">Inicio</a></li>
+                        <li class="has-dropdown">
+                            <a href="catalog.html" class="nav-link">Productos</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="menu-column">
+                                        <h3>Spearguns</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=basic-guns">Basic Guns</a></li>
+                                            <li><a href="catalog.html?cat=aluminium-series">Aluminium Series</a></li>
+                                            <li><a href="catalog.html?cat=carbon-series">Carbon Series</a></li>
+                                            <li><a href="catalog.html?cat=timberline-series">Timberline Series</a></li>
+                                            <li><a href="catalog.html?cat=spares">Spares</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Spears & Rubber</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=spears">Spears</a></li>
+                                            <li><a href="catalog.html?cat=barbs">Barbs & Tip Protectors</a></li>
+                                            <li><a href="catalog.html?cat=rubbers">Rubbers</a></li>
+                                            <li><a href="catalog.html?cat=floats">Floats & Flashers</a></li>
+                                            <li><a href="catalog.html?cat=reels">Reels</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Essential Gear</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=masks">Masks</a></li>
+                                            <li><a href="catalog.html?cat=snorkel">Snorkel</a></li>
+                                            <li><a href="catalog.html?cat=knives">Knives</a></li>
+                                            <li><a href="catalog.html?cat=fins">Fins</a></li>
+                                            <li><a href="catalog.html?cat=weight-belt">Weight Belt</a></li>
+                                            <li><a href="catalog.html?cat=torches">Torches</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Contact Protection</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=wetsuits">Wetsuits</a></li>
+                                            <li><a href="catalog.html?cat=rash-guards">Rash Guards</a></li>
+                                            <li><a href="catalog.html?cat=socks">Socks</a></li>
+                                            <li><a href="catalog.html?cat=gloves">Gloves</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Clothing & Accessories</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=t-shirts">T-Shirts</a></li>
+                                            <li><a href="catalog.html?cat=head-gear">Head Gear</a></li>
+                                            <li><a href="catalog.html?cat=bags">Bags</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Logo (Center) -->
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-text">ROB ALLEN</span>
+                        <span class="logo-subtitle">MEXICO</span>
+                    </a>
+                </div>
+
+                <!-- Right Menu -->
+                <nav class="nav-menu nav-menu-right" id="navMenuRight">
+                    <ul>
+                        <li><a href="distribuidores.html" class="nav-link active">Distribuidores</a></li>
+                        <li><a href="index.html#footer" class="nav-link">Contacto</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Hamburger Menu -->
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- DISTRIBUTORS HERO -->
+    <section class="distributors-hero">
+        <div class="container">
+            <div class="distributors-hero-content">
+                <h1 class="distributors-title">Distribuidores Autorizados</h1>
+                <p class="distributors-subtitle">Red global de distribuidores oficiales Rob Allen</p>
+                <div class="breadcrumb">
+                    <a href="index.html">Inicio</a>
+                    <span>/</span>
+                    <span>Distribuidores</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH AND FILTER -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-wrapper">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Buscar por país, ciudad o continente...">
+                </div>
+                <div class="filter-continents">
+                    <button class="continent-btn active" data-continent="all">Todos</button>
+                    <button class="continent-btn" data-continent="americas">Américas</button>
+                    <button class="continent-btn" data-continent="europe">Europa</button>
+                    <button class="continent-btn" data-continent="asia">Asia</button>
+                    <button class="continent-btn" data-continent="oceania">Oceanía</button>
+                    <button class="continent-btn" data-continent="africa">África</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DISTRIBUTORS GRID -->
+    <section class="distributors-section">
+        <div class="container">
+            <div class="distributors-grid" id="distributorsGrid">
+
+                <!-- AMERICAS -->
+                <!-- USA -->
+                <div class="distributor-card" data-continent="americas" data-country="USA">
+                    <div class="distributor-flag">
+                        <img src="https://flagcdn.com/w320/us.png" alt="USA Flag">
+                    </div>
+                    <div class="distributor-content">
+                        <h3 class="distributor-country">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Estados Unidos
+                        </h3>
+                        <h4 class="distributor-name">Triton X Inc</h4>
+                        <p class="distributor-address">
+                            <i class="fas fa-location-dot"></i>
+                            2500 Del Monte Street, Suite 110<br>
+                            West Sacramento, CA 95691
+                        </p>
+                        <div class="distributor-contacts">
+                            <a href="tel:+19163713441" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                +1 916-371-3441
+                            </a>
+                            <a href="https://roballendiving.com" target="_blank" class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                roballendiving.com
+                            </a>
+                        </div>
+                        <button class="btn-view-map" data-lat="38.5816" data-lng="-121.5309" data-name="Triton X Inc">
+                            <i class="fas fa-map"></i>
+                            Ver en Mapa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Canada -->
+                <div class="distributor-card" data-continent="americas" data-country="Canada">
+                    <div class="distributor-flag">
+                        <img src="https://flagcdn.com/w320/ca.png" alt="Canada Flag">
+                    </div>
+                    <div class="distributor-content">
+                        <h3 class="distributor-country">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Canadá
+                        </h3>
+                        <h4 class="distributor-name">Diving Sports Canada</h4>
+                        <p class="distributor-address">
+                            <i class="fas fa-location-dot"></i>
+                            4578 Main Street<br>
+                            Vancouver, BC V5V3R5
+                        </p>
+                        <div class="distributor-contacts">
+                            <a href="tel:+16046941886" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                +1 (604) 694-1886
+                            </a>
+                            <a href="https://divingsports.com" target="_blank" class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                divingsports.com
+                            </a>
+                        </div>
+                        <button class="btn-view-map" data-lat="49.2461" data-lng="-123.1026" data-name="Diving Sports Canada">
+                            <i class="fas fa-map"></i>
+                            Ver en Mapa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Brazil -->
+                <div class="distributor-card" data-continent="americas" data-country="Brazil">
+                    <div class="distributor-flag">
+                        <img src="https://flagcdn.com/w320/br.png" alt="Brazil Flag">
+                    </div>
+                    <div class="distributor-content">
+                        <h3 class="distributor-country">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Brasil
+                        </h3>
+                        <h4 class="distributor-name">Grupo Onda</h4>
+                        <p class="distributor-address">
+                            <i class="fas fa-location-dot"></i>
+                            Rua Dr. Rubens Meireles, 307/317<br>
+                            São Paulo, Brasil 01141-000
+                        </p>
+                        <div class="distributor-contacts">
+                            <a href="tel:+551138717400" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                +55 (11) 3871-7400
+                            </a>
+                            <a href="https://grupoonda.com.br" target="_blank" class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                grupoonda.com.br
+                            </a>
+                        </div>
+                        <button class="btn-view-map" data-lat="-23.5316" data-lng="-46.6675" data-name="Grupo Onda">
+                            <i class="fas fa-map"></i>
+                            Ver en Mapa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- EUROPE -->
+                <!-- UK -->
+                <div class="distributor-card" data-continent="europe" data-country="UK">
+                    <div class="distributor-flag">
+                        <img src="https://flagcdn.com/w320/gb.png" alt="UK Flag">
+                    </div>
+                    <div class="distributor-content">
+                        <h3 class="distributor-country">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Reino Unido
+                        </h3>
+                        <h4 class="distributor-name">Spearfishing Limited UK</h4>
+                        <p class="distributor-address">
+                            <i class="fas fa-location-dot"></i>
+                            Unit H, St. Austell Bay Business Park<br>
+                            Cornwall, PL25 3RF
+                        </p>
+                        <div class="distributor-contacts">
+                            <a href="tel:+441726213290" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                +44 1726 213290
+                            </a>
+                        </div>
+                        <button class="btn-view-map" data-lat="50.3473" data-lng="-4.7417" data-name="Spearfishing Limited UK">
+                            <i class="fas fa-map"></i>
+                            Ver en Mapa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- France -->
+                <div class="distributor-card" data-continent="europe" data-country="France">
+                    <div class="distributor-flag">
+                        <img src="https://flagcdn.com/w320/fr.png" alt="France Flag">
+                    </div>
+                    <div class="distributor-content">
+                        <h3 class="distributor-country">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Francia
+                        </h3>
+                        <h4 class="distributor-name">Marea / Sportsmed</h4>
+                        <p class="distributor-address">
+                            <i class="fas fa-location-dot"></i>
+                            RN 98, Les 4 Chemins<br>
+                            83130 La Garde, Marseilles
+                        </p>
+                        <div class="distributor-contacts">
+                            <a href="tel:+0494752014" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                +04 94 75 20 14
+                            </a>
+                        </div>
+                        <button class="btn-view-map" data-lat="43.1316" data-lng="5.9844" data-name="Marea / Sportsmed">
+                            <i class="fas fa-map"></i>
+                            Ver en Mapa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Italy -->
+                <div class="distributor-card" data-continent="europe" data-country="Italy">
+                    <div class="distributor-flag">
+                        <img src="https://flagcdn.com/w320/it.png" alt="Italy Flag">
+                    </div>
+                    <div class="distributor-content">
+                        <h3 class="distributor-country">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Italia
+                        </h3>
+                        <h4 class="distributor-name">Deep Blue Sub SRL</h4>
+                        <p class="distributor-address">
+                            <i class="fas fa-location-dot"></i>
+                            Via Luigi Sacco 16<br>
+                            21100 Varese, VA
+                        </p>
+                        <div class="distributor-contacts">
+                            <a href="tel:+393498627004" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                +39 349 862 7004
+                            </a>
+                            <a href="https://deepbluesub.com" target="_blank" class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                deepbluesub.com
+                            </a>
+                        </div>
+                        <button class="btn-view-map" data-lat="45.8205" data-lng="8.8250" data-name="Deep Blue Sub SRL">
+                            <i class="fas fa-map"></i>
+                            Ver en Mapa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Portugal -->
+                <div class="distributor-card" data-continent="europe" data-country="Portugal">
+                    <div class="distributor-flag">
+                        <img src="https://flagcdn.com/w320/pt.png" alt="Portugal Flag">
+                    </div>
+                    <div class="distributor-content">
+                        <h3 class="distributor-country">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Portugal
+                        </h3>
+                        <h4 class="distributor-name">Blue Water Extreme</h4>
+                        <p class="distributor-address">
+                            <i class="fas fa-location-dot"></i>
+                            Alameda António Sérgio 69 - Store 29<br>
+                            2795-024 Linda-a-Velha, Lisbon
+                        </p>
+                        <div class="distributor-contacts">
+                            <a href="tel:+351937520851" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                +351 937 520 851
+                            </a>
+                            <a href="https://bluewaterextreme.com" target="_blank" class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                bluewaterextreme.com
+                            </a>
+                        </div>
+                        <button class="btn-view-map" data-lat="38.7223" data-lng="-9.2277" data-name="Blue Water Extreme">
+                            <i class="fas fa-map"></i>
+                            Ver en Mapa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ASIA -->
+                <!-- UAE -->
+                <div class="distributor-card" data-continent="asia" data-country="UAE">
+                    <div class="distributor-flag">
+                        <img src="https://flagcdn.com/w320/ae.png" alt="UAE Flag">
+                    </div>
+                    <div class="distributor-content">
+                        <h3 class="distributor-country">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Emiratos Árabes Unidos
+                        </h3>
+                        <h4 class="distributor-name">Hayaari Marine</h4>
+                        <p class="distributor-address">
+                            <i class="fas fa-location-dot"></i>
+                            Pearl Residence Bldg, Khalifa St<br>
+                            Corniche, Abu Dhabi
+                        </p>
+                        <div class="distributor-contacts">
+                            <a href="tel:+97124415665" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                +971 2 441 5665
+                            </a>
+                            <a href="tel:+971503313584" class="contact-item">
+                                <i class="fas fa-mobile"></i>
+                                +971 50 331 3584
+                            </a>
+                        </div>
+                        <button class="btn-view-map" data-lat="24.4539" data-lng="54.3773" data-name="Hayaari Marine">
+                            <i class="fas fa-map"></i>
+                            Ver en Mapa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Thailand -->
+                <div class="distributor-card" data-continent="asia" data-country="Thailand">
+                    <div class="distributor-flag">
+                        <img src="https://flagcdn.com/w320/th.png" alt="Thailand Flag">
+                    </div>
+                    <div class="distributor-content">
+                        <h3 class="distributor-country">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Tailandia
+                        </h3>
+                        <h4 class="distributor-name">Diego Pauel</h4>
+                        <p class="distributor-address">
+                            <i class="fas fa-location-dot"></i>
+                            127/169, M.3, Maret, Lamai<br>
+                            Koh Samui, Surat-Thani, 84310
+                        </p>
+                        <div class="distributor-contacts">
+                            <a href="tel:+66805352528" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                +66 80 535 2528
+                            </a>
+                        </div>
+                        <button class="btn-view-map" data-lat="9.4606" data-lng="100.0385" data-name="Diego Pauel">
+                            <i class="fas fa-map"></i>
+                            Ver en Mapa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- OCEANIA -->
+                <!-- Australia -->
+                <div class="distributor-card" data-continent="oceania" data-country="Australia">
+                    <div class="distributor-flag">
+                        <img src="https://flagcdn.com/w320/au.png" alt="Australia Flag">
+                    </div>
+                    <div class="distributor-content">
+                        <h3 class="distributor-country">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Australia
+                        </h3>
+                        <h4 class="distributor-name">Australian Underwater Products</h4>
+                        <p class="distributor-address">
+                            <i class="fas fa-location-dot"></i>
+                            4 Scotch Court<br>
+                            Rosebud, Victoria, 3939
+                        </p>
+                        <div class="distributor-contacts">
+                            <a href="tel:+61359860100" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                +61 3 5986 0100
+                            </a>
+                            <a href="https://aupexpressorder.com" target="_blank" class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                aupexpressorder.com
+                            </a>
+                        </div>
+                        <button class="btn-view-map" data-lat="-38.3605" data-lng="144.9054" data-name="Australian Underwater Products">
+                            <i class="fas fa-map"></i>
+                            Ver en Mapa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- New Zealand -->
+                <div class="distributor-card" data-continent="oceania" data-country="New Zealand">
+                    <div class="distributor-flag">
+                        <img src="https://flagcdn.com/w320/nz.png" alt="New Zealand Flag">
+                    </div>
+                    <div class="distributor-content">
+                        <h3 class="distributor-country">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Nueva Zelanda
+                        </h3>
+                        <h4 class="distributor-name">SPLASH Ltd</h4>
+                        <p class="distributor-address">
+                            <i class="fas fa-location-dot"></i>
+                            50a Anzac Road<br>
+                            Browns Bay, Auckland, 0630
+                        </p>
+                        <div class="distributor-contacts">
+                            <a href="tel:+6494750071" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                +64 9 475 0071
+                            </a>
+                        </div>
+                        <button class="btn-view-map" data-lat="-36.7175" data-lng="174.7507" data-name="SPLASH Ltd">
+                            <i class="fas fa-map"></i>
+                            Ver en Mapa
+                        </button>
+                    </div>
+                </div>
+
+                <!-- AFRICA -->
+                <!-- South Africa -->
+                <div class="distributor-card" data-continent="africa" data-country="South Africa">
+                    <div class="distributor-flag">
+                        <img src="https://flagcdn.com/w320/za.png" alt="South Africa Flag">
+                    </div>
+                    <div class="distributor-content">
+                        <h3 class="distributor-country">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Sudáfrica
+                        </h3>
+                        <h4 class="distributor-name">Dive Factory (Home of Rob Allen)</h4>
+                        <p class="distributor-address">
+                            <i class="fas fa-location-dot"></i>
+                            174 Magwaza Maphalala Street<br>
+                            Congella, Durban 4001
+                        </p>
+                        <div class="distributor-contacts">
+                            <a href="tel:+27313012241" class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                +27 31 301 2241
+                            </a>
+                            <a href="https://divefactory.co.za" target="_blank" class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                divefactory.co.za
+                            </a>
+                        </div>
+                        <button class="btn-view-map" data-lat="-29.8787" data-lng="30.9926" data-name="Dive Factory">
+                            <i class="fas fa-map"></i>
+                            Ver en Mapa
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- No Results Message -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No se encontraron distribuidores</h3>
+                <p>Intenta con otra búsqueda o selecciona un continente diferente</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP MODAL -->
+    <div class="map-modal" id="mapModal">
+        <div class="map-modal-content">
+            <button class="map-modal-close" id="closeMapModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 id="mapModalTitle"></h3>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Column 1: Logo & Info -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="logo-text">ROB ALLEN</span>
+                        <span class="logo-subtitle">MEXICO</span>
+                    </div>
+                    <p class="footer-description">
+                        Tu aliado en la pesca submarina desde 2009. Equipamiento profesional 
+                        para cazadores submarinos exigentes.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="catalog.html">Catálogo</a></li>
+                        <li><a href="index.html#about">Sobre Nosotros</a></li>
+                        <li><a href="distribuidores.html">Distribuidores</a></li>
+                        <li><a href="#">Blog & Consejos</a></li>
+                        <li><a href="#">Garantía</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Categories -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Categorías</h4>
+                    <ul class="footer-links">
+                        <li><a href="../CATALOGO/catalog.html?filter=arpones">Arpones</a></li>
+                        <li><a href="../CATALOGO/catalog.html?filter=focos">Focos de Buceo</a></li>
+                        <li><a href="../CATALOGO/catalog.html?filter=accesorios">Accesorios</a></li>
+                        <li><a href="../CATALOGO/catalog.html?filter=lineas">Líneas y Fleches</a></li>
+                        <li><a href="../CATALOGO/catalog.html">Equipamiento Completo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Playa del Carmen, Q. Roo<br>México</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+52 (984) 123-4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@roballenmexico.mx</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rob Allen Mexico. Todos los derechos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidad</a>
+                    <span>|</span>
+                    <a href="#">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script src="distribuidores.js"></script>
+
+</body>
+</html>
+
