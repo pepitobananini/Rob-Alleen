@@ -702,7 +702,7 @@ window.addEventListener('load', () => {
 
 
 // ==============================
-// CAROUSEL FUNCTIONALITY
+// CAROUSEL FUNCTIONALITY - INFINITE LOOP
 // ==============================
 
 const carouselTrack = document.getElementById('carouselTrack');
@@ -711,100 +711,170 @@ const carouselNextBtn = document.getElementById('carouselNext');
 
 if (carouselTrack && carouselPrevBtn && carouselNextBtn) {
     let currentIndex = 0;
-    const slides = carouselTrack.querySelectorAll('.carousel-slide');
-    const totalSlides = slides.length;
+    let isAnimating = false;
+    const originalSlides = carouselTrack.querySelectorAll('.carousel-slide');
+    const totalSlides = originalSlides.length;
+    
+    // Clone slides for infinite loop - clonar al final e inicio
+    const firstSlideClone = originalSlides[0].cloneNode(true);
+    const lastSlideClone = originalSlides[originalSlides.length - 1].cloneNode(true);
+    carouselTrack.appendChild(firstSlideClone);
+    carouselTrack.insertBefore(lastSlideClone, originalSlides[0]);
     
     // Calculate how many slides to show based on screen width
     function getSlidesToShow() {
         const width = window.innerWidth;
-        if (width <= 480) return 1;
-        if (width <= 768) return 2;
-        if (width <= 1024) return 3;
+        if (width <= 768) return 1; // Móvil: 1 producto a la vez
+        if (width <= 1024) return 2;
         return 4;
     }
     
-    function updateCarousel() {
+    function updateCarousel(instant = false) {
+        if (isAnimating && !instant) return;
+        
         const slidesToShow = getSlidesToShow();
         const slideWidth = 100 / slidesToShow;
-        const maxIndex = Math.max(0, totalSlides - slidesToShow);
         
-        // Ensure currentIndex is within bounds
-        if (currentIndex > maxIndex) {
-            currentIndex = maxIndex;
+        // Ajuste para loop infinito con slides clonados
+        let translateX = 0;
+        
+        if (currentIndex < 0) {
+            // Si estamos antes del primer slide, saltamos al último real
+            currentIndex = totalSlides - 1;
+            translateX = -((currentIndex + 1) * slideWidth);
+            carouselTrack.style.transition = 'none';
+            carouselTrack.style.transform = `translateX(${translateX}%)`;
+            setTimeout(() => {
+                carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            }, 50);
+            return;
+        } else if (currentIndex >= totalSlides) {
+            // Si estamos después del último slide, saltamos al primero real
+            currentIndex = 0;
+            translateX = -((currentIndex + 1) * slideWidth);
+            carouselTrack.style.transition = 'none';
+            carouselTrack.style.transform = `translateX(${translateX}%)`;
+            setTimeout(() => {
+                carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            }, 50);
+            return;
         }
         
-        const translateX = -(currentIndex * slideWidth);
+        // Posición normal con ajuste para el slide clonado al inicio
+        translateX = -((currentIndex + 1) * slideWidth);
+        
+        if (instant) {
+            carouselTrack.style.transition = 'none';
+        } else {
+            carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        }
+        
         carouselTrack.style.transform = `translateX(${translateX}%)`;
         
-        // Update button states
-        carouselPrevBtn.disabled = currentIndex === 0;
-        carouselNextBtn.disabled = currentIndex >= maxIndex;
-        
-        // Update button opacity
-        carouselPrevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-        carouselNextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
-        carouselPrevBtn.style.cursor = currentIndex === 0 ? 'not-allowed' : 'pointer';
-        carouselNextBtn.style.cursor = currentIndex >= maxIndex ? 'not-allowed' : 'pointer';
+        if (instant) {
+            isAnimating = false;
+        } else {
+            isAnimating = true;
+            setTimeout(() => {
+                isAnimating = false;
+            }, 600);
+        }
     }
     
     // Next button
     carouselNextBtn.addEventListener('click', () => {
-        const slidesToShow = getSlidesToShow();
-        const maxIndex = Math.max(0, totalSlides - slidesToShow);
-        if (currentIndex < maxIndex) {
-            currentIndex++;
-            updateCarousel();
-        }
+        if (isAnimating) return;
+        currentIndex++;
+        updateCarousel();
     });
     
     // Previous button
     carouselPrevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
+        if (isAnimating) return;
+        currentIndex--;
+        updateCarousel();
     });
     
-    // Touch/Swipe support for mobile
+    // Touch/Swipe support for mobile - mejorado
     let touchStartX = 0;
     let touchEndX = 0;
+    let isDragging = false;
+    let startTranslate = 0;
     
     carouselTrack.addEventListener('touchstart', (e) => {
+        if (isAnimating) return;
         touchStartX = e.changedTouches[0].screenX;
-    });
+        isDragging = true;
+        startTranslate = currentIndex;
+        carouselTrack.style.transition = 'none';
+    }, { passive: true });
+    
+    carouselTrack.addEventListener('touchmove', (e) => {
+        if (!isDragging || isAnimating) return;
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        const slidesToShow = getSlidesToShow();
+        const slideWidth = 100 / slidesToShow;
+        const currentTranslate = -((startTranslate + 1) * slideWidth);
+        const newTranslate = currentTranslate + (diff / carouselTrack.offsetWidth * 100);
+        carouselTrack.style.transform = `translateX(${newTranslate}%)`;
+    }, { passive: true });
     
     carouselTrack.addEventListener('touchend', (e) => {
+        if (!isDragging || isAnimating) return;
+        isDragging = false;
+        carouselTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
         touchEndX = e.changedTouches[0].screenX;
         handleSwipe();
-    });
+    }, { passive: true });
     
     function handleSwipe() {
-        const swipeThreshold = 50;
+        const swipeThreshold = 80;
+        const swipeDistance = Math.abs(touchStartX - touchEndX);
+        
+        if (swipeDistance < swipeThreshold) {
+            // Not enough swipe, return to current position
+            updateCarousel();
+            return;
+        }
+        
         if (touchStartX - touchEndX > swipeThreshold) {
             // Swipe left - next slide
-            carouselNextBtn.click();
+            currentIndex++;
+            updateCarousel();
         } else if (touchEndX - touchStartX > swipeThreshold) {
             // Swipe right - previous slide
-            carouselPrevBtn.click();
+            currentIndex--;
+            updateCarousel();
+        } else {
+            updateCarousel();
         }
     }
     
     // Update on window resize
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-        updateCarousel();
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            updateCarousel(true);
+        }, 100);
     });
     
     // Initialize carousel
-    updateCarousel();
+    updateCarousel(true);
     
     // Make carousel products clickable
     const carouselProducts = document.querySelectorAll('.carousel-product');
     carouselProducts.forEach(product => {
-        product.addEventListener('click', () => {
+        product.addEventListener('click', (e) => {
+            // Don't navigate if clicking the button
+            if (e.target.closest('.carousel-product-btn')) {
+                return;
+            }
             const productName = product.querySelector('h4').textContent;
             console.log(`Navigating to: ${productName}`);
             // Navigate to catalog with filter
-            window.location.href = `../CATALOGO/catalog.html?cat=carbon-series`;
+            window.location.href = `catalog.html?cat=carbon-series`;
         });
     });
 }
