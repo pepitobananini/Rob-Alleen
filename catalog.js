@@ -102,8 +102,41 @@ function setupEventListeners() {
 function handleURLParams() {
     const urlParams = new URLSearchParams(window.location.search);
     const filterParam = urlParams.get('filter');
+    const catParam = urlParams.get('cat');
     
-    if (filterParam) {
+    // Handle category parameter from URL (e.g., catalog.html?cat=carbon-series)
+    if (catParam) {
+        // Map category names to filter values
+        const categoryMap = {
+            'basic-guns': 'arpones',
+            'aluminium-series': 'arpones',
+            'carbon-series': 'arpones',
+            'timberline-series': 'arpones',
+            'spares': 'arpones',
+            'spears': 'lineas',
+            'barbs': 'lineas',
+            'rubbers': 'lineas',
+            'floats': 'lineas',
+            'reels': 'lineas',
+            'masks': 'accesorios',
+            'snorkel': 'accesorios',
+            'knives': 'accesorios',
+            'fins': 'accesorios',
+            'weight-belt': 'accesorios',
+            'torches': 'focos',
+            'wetsuits': 'accesorios',
+            'rash-guards': 'accesorios',
+            'socks': 'accesorios',
+            'gloves': 'accesorios',
+            't-shirts': 'accesorios',
+            'head-gear': 'accesorios',
+            'bags': 'accesorios'
+        };
+        
+        const mappedFilter = categoryMap[catParam] || 'all';
+        setActiveFilter(mappedFilter);
+        filterProducts(mappedFilter);
+    } else if (filterParam) {
         setActiveFilter(filterParam);
         filterProducts(filterParam);
     }

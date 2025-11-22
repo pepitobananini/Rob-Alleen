@@ -743,6 +743,7 @@ ul {
     pointer-events: none;
     transition: all var(--transition-medium);
     border: 1px solid rgba(98, 182, 203, 0.2);
+    z-index: 1001;
 }
 
 .has-dropdown:hover .mega-menu {
@@ -750,6 +751,13 @@ ul {
     visibility: visible;
     pointer-events: auto;
     transform: translateX(-50%) translateY(10px);
+}
+
+/* Ensure mega menu links are clickable */
+.mega-menu a {
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 1002;
 }
 
 .mega-menu-content {
@@ -783,6 +791,10 @@ ul {
     transition: all var(--transition-fast);
     display: block;
     padding: 0.3rem 0;
+    pointer-events: auto;
+    cursor: pointer;
+    position: relative;
+    z-index: 1003;
 }
 
 .menu-column ul li a:hover {
