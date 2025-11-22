@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rob Allen Mexico - Equipo de Pesca Submarina de Alto Rendimiento. Arpones, focos de buceo y accesorios profesionales.">
+    <title>Rob Allen Mexico - Pesca Submarina de Alto Rendimiento</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css?v=3.0">
+</head>
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <!-- Left Menu -->
+                <nav class="nav-menu nav-menu-left" id="navMenuLeft">
+                    <ul>
+                        <li><a href="index.html" class="nav-link" data-i18n="nav.home">Inicio</a></li>
+                        <li class="has-dropdown">
+                            <a href="catalog.html" class="nav-link" data-i18n="nav.products">Productos</a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-content">
+                                    <div class="menu-column">
+                                        <h3>Spearguns</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=basic-guns">Basic Guns</a></li>
+                                            <li><a href="catalog.html?cat=aluminium-series">Aluminium Series</a></li>
+                                            <li><a href="catalog.html?cat=carbon-series">Carbon Series</a></li>
+                                            <li><a href="catalog.html?cat=timberline-series">Timberline Series</a></li>
+                                            <li><a href="catalog.html?cat=spares">Spares</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Spears & Rubber</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=spears">Spears</a></li>
+                                            <li><a href="catalog.html?cat=barbs">Barbs & Tip Protectors</a></li>
+                                            <li><a href="catalog.html?cat=rubbers">Rubbers</a></li>
+                                            <li><a href="catalog.html?cat=floats">Floats & Flashers</a></li>
+                                            <li><a href="catalog.html?cat=reels">Reels</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Essential Gear</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=masks">Masks</a></li>
+                                            <li><a href="catalog.html?cat=snorkel">Snorkel</a></li>
+                                            <li><a href="catalog.html?cat=knives">Knives</a></li>
+                                            <li><a href="catalog.html?cat=fins">Fins</a></li>
+                                            <li><a href="catalog.html?cat=weight-belt">Weight Belt</a></li>
+                                            <li><a href="catalog.html?cat=torches">Torches</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Contact Protection</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=wetsuits">Wetsuits</a></li>
+                                            <li><a href="catalog.html?cat=rash-guards">Rash Guards</a></li>
+                                            <li><a href="catalog.html?cat=socks">Socks</a></li>
+                                            <li><a href="catalog.html?cat=gloves">Gloves</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="menu-column">
+                                        <h3>Clothing & Accessories</h3>
+                                        <ul>
+                                            <li><a href="catalog.html?cat=t-shirts">T-Shirts</a></li>
+                                            <li><a href="catalog.html?cat=head-gear">Head Gear</a></li>
+                                            <li><a href="catalog.html?cat=bags">Bags</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Logo (Center) -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="https://www.roballenmexico.mx/wp-content/uploads/2021/06/ROB-ALLEN.png" alt="Rob Allen Mexico" class="logo-image">
+                    </a>
+                </div>
+
+                <!-- Right Menu -->
+                <nav class="nav-menu nav-menu-right" id="navMenuRight">
+                    <ul>
+                        <li><a href="distribuidores.html" class="nav-link" data-i18n="nav.distributors">Distribuidores</a></li>
+                        <li><a href="#footer" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Right Side Actions -->
+                <div class="header-actions">
+                    <!-- Language Selector (Desktop) -->
+                    <div class="language-selector language-selector-desktop">
+                        <button class="language-btn" id="languageBtnDesktop" aria-label="Select Language">
+                            <span class="flag-icon" id="currentFlagDesktop">🇲🇽</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="language-dropdown" id="languageDropdownDesktop">
+                            <button class="language-option" data-lang="es" data-country="MEXICO" data-flag="🇲🇽">
+                                <span class="flag-icon">🇲🇽</span>
+                                <span>Español</span>
+                            </button>
+                            <button class="language-option" data-lang="en" data-country="USA" data-flag="🇺🇸">
+                                <span class="flag-icon">🇺🇸</span>
+                                <span>English</span>
+                            </button>
+                            <button class="language-option" data-lang="pt" data-country="BRASIL" data-flag="🇧🇷">
+                                <span class="flag-icon">🇧🇷</span>
+                                <span>Português</span>
+                            </button>
+                            <button class="language-option" data-lang="en-au" data-country="AUSTRALIA" data-flag="🇦🇺">
+                                <span class="flag-icon">🇦🇺</span>
+                                <span>English (AU)</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Cart Button -->
+                    <button class="cart-btn" id="cartBtn" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+                </div>
+
+                <!-- Hamburger Menu -->
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Mobile Menu Overlay -->
+                <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+                    <nav class="mobile-menu" id="mobileMenu">
+                        <div class="mobile-menu-header">
+                            <div class="mobile-logo">
+                                <img src="https://www.roballenmexico.mx/wp-content/uploads/2021/06/ROB-ALLEN.png" alt="Rob Allen Mexico" class="mobile-logo-image">
+                            </div>
+                            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close Menu">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <ul class="mobile-menu-list">
+                            <li><a href="index.html" class="mobile-nav-link" data-i18n="nav.home">Inicio</a></li>
+                            <li class="mobile-has-dropdown">
+                                <a href="catalog.html" class="mobile-nav-link" data-i18n="nav.products">Productos <i class="fas fa-chevron-down"></i></a>
+                                <ul class="mobile-submenu">
+                                    <li><a href="catalog.html?cat=basic-guns">Basic Guns</a></li>
+                                    <li><a href="catalog.html?cat=aluminium-series">Aluminium Series</a></li>
+                                    <li><a href="catalog.html?cat=carbon-series">Carbon Series</a></li>
+                                    <li><a href="catalog.html?cat=timberline-series">Timberline Series</a></li>
+                                    <li><a href="catalog.html?cat=wetsuits">Wetsuits</a></li>
+                                    <li><a href="catalog.html?cat=masks">Masks</a></li>
+                                    <li><a href="catalog.html?cat=torches">Torches</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="distribuidores.html" class="mobile-nav-link" data-i18n="nav.distributors">Distribuidores</a></li>
+                            <li><a href="#footer" class="mobile-nav-link" data-i18n="nav.contact">Contacto</a></li>
+                        </ul>
+                        <!-- Mobile Cart Button -->
+                        <button class="mobile-cart-btn" id="mobileCartBtn" onclick="document.getElementById('cartOverlay').classList.add('active'); document.body.style.overflow = 'hidden';">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Carrito</span>
+                            <span class="cart-badge" id="mobileCartBadge">0</span>
+                        </button>
+                        <!-- Language Selector (Mobile) -->
+                        <div class="language-selector language-selector-mobile">
+                            <button class="language-btn mobile-language-btn" id="languageBtnMobile" aria-label="Select Language">
+                                <span class="flag-icon" id="currentFlagMobile">🇲🇽</span>
+                                <span>Idioma / Language</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="language-dropdown mobile-language-dropdown" id="languageDropdownMobile">
+                                <button class="language-option" data-lang="es" data-country="MEXICO" data-flag="🇲🇽">
+                                    <span class="flag-icon">🇲🇽</span>
+                                    <span>Español</span>
+                                </button>
+                                <button class="language-option" data-lang="en" data-country="USA" data-flag="🇺🇸">
+                                    <span class="flag-icon">🇺🇸</span>
+                                    <span>English</span>
+                                </button>
+                                <button class="language-option" data-lang="pt" data-country="BRASIL" data-flag="🇧🇷">
+                                    <span class="flag-icon">🇧🇷</span>
+                                    <span>Português</span>
+                                </button>
+                                <button class="language-option" data-lang="en-au" data-country="AUSTRALIA" data-flag="🇦🇺">
+                                    <span class="flag-icon">🇦🇺</span>
+                                    <span>English (AU)</span>
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero">
+        <!-- Video Background from Vimeo -->
+        <div class="hero-video-wrapper">
+            <iframe 
+                src="https://player.vimeo.com/video/1139683855?background=1&autoplay=1&loop=1&muted=1&controls=0&playsinline=1" 
+                class="hero-video-iframe"
+                frameborder="0" 
+                allow="autoplay; fullscreen; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title fade-in-up" data-i18n="hero.title">ROB ALLEN MEXICO</h1>
+            <p class="hero-subtitle fade-in-up delay-1" data-i18n="hero.subtitle">Equipo de Pesca Submarina de Alto Rendimiento</p>
+            <p class="hero-description fade-in-up delay-2" data-i18n="hero.description">Arpones profesionales, focos de buceo y accesorios para cazadores submarinos exigentes</p>
+            <button class="btn btn-primary fade-in-up delay-3" id="heroCtaBtn" onclick="window.location.href='catalog.html'">
+                <span data-i18n="hero.cta">Explora Nuestros Productos</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS SECTION -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate-on-scroll" data-i18n="products.title">Productos Destacados</h2>
+                <p class="section-subtitle animate-on-scroll" data-i18n="products.subtitle">Equipamiento profesional para los mejores cazadores submarinos</p>
+            </div>
+
+            <!-- SPEARGUNS CAROUSEL -->
+            <div class="carousel-section animate-on-scroll">
+                <h3 class="carousel-title">Carbon Series</h3>
+                
+                <div class="carousel-container">
+                    <button class="carousel-btn carousel-prev" id="carouselPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="carousel-track-container">
+                        <div class="carousel-track" id="carouselTrack">
+                            <!-- Carousel Slide 1: Carbon Timberline -->
+                            <div class="carousel-slide">
+                                <div class="carousel-product" data-product-id="1" data-product-name="Carbon Timberline" data-product-price="15999" data-product-image="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop">
+                                    <div class="carousel-badge bestseller">Bestseller</div>
+                                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop" 
+                                         alt="Carbon Timberline">
+                                    <div class="carousel-product-info">
+                                        <h4>Carbon Timberline</h4>
+                                        <p class="carousel-product-price">$15,999 MXN</p>
+                                    </div>
+                                    <button class="carousel-product-btn" onclick="addToCart(1, 'Carbon Timberline', 15999, 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop')">Agregar</button>
+                                </div>
+                            </div>
+
+                            <!-- Carousel Slide 2: GT Triple -->
+                            <div class="carousel-slide">
+                                <div class="carousel-product" data-product-id="2" data-product-name="GT Triple" data-product-price="17999" data-product-image="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=400&fit=crop">
+                                    <div class="carousel-badge new">Nuevo</div>
+                                    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=400&fit=crop" 
+                                         alt="GT Triple">
+                                    <div class="carousel-product-info">
+                                        <h4>GT Triple</h4>
+                                        <p class="carousel-product-price">$17,999 MXN</p>
+                                    </div>
+                                    <button class="carousel-product-btn" onclick="addToCart(2, 'GT Triple', 17999, 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=400&fit=crop')">Agregar</button>
+                                </div>
+                            </div>
+
+                            <!-- Carousel Slide 3: Mahi Triple -->
+                            <div class="carousel-slide">
+                                <div class="carousel-product" data-product-id="3" data-product-name="Mahi Triple" data-product-price="14999" data-product-image="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop">
+                                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop" 
+                                         alt="Mahi Triple">
+                                    <div class="carousel-product-info">
+                                        <h4>Mahi Triple</h4>
+                                        <p class="carousel-product-price">$14,999 MXN</p>
+                                    </div>
+                                    <button class="carousel-product-btn" onclick="addToCart(3, 'Mahi Triple', 14999, 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop')">Agregar</button>
+                                </div>
+                            </div>
+
+                            <!-- Carousel Slide 4: Blue Water -->
+                            <div class="carousel-slide">
+                                <div class="carousel-product" data-product-id="4" data-product-name="Blue Water" data-product-price="12999" data-product-image="https://images.unsplash.com/photo-1682687220208-22d7a2543e88?w=400&h=400&fit=crop">
+                                    <img src="https://images.unsplash.com/photo-1682687220208-22d7a2543e88?w=400&h=400&fit=crop" 
+                                         alt="Blue Water">
+                                    <div class="carousel-product-info">
+                                        <h4>Blue Water</h4>
+                                        <p class="carousel-product-price">$12,999 MXN</p>
+                                    </div>
+                                    <button class="carousel-product-btn" onclick="addToCart(4, 'Blue Water', 12999, 'https://images.unsplash.com/photo-1682687220208-22d7a2543e88?w=400&h=400&fit=crop')">Agregar</button>
+                                </div>
+                            </div>
+
+                            <!-- Carousel Slide 5: Digital Camo -->
+                            <div class="carousel-slide">
+                                <div class="carousel-product" data-product-id="5" data-product-name="Digital Camo" data-product-price="13999" data-product-image="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop">
+                                    <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop" 
+                                         alt="Digital Camo">
+                                    <div class="carousel-product-info">
+                                        <h4>Digital Camo</h4>
+                                        <p class="carousel-product-price">$13,999 MXN</p>
+                                    </div>
+                                    <button class="carousel-product-btn" onclick="addToCart(5, 'Digital Camo', 13999, 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop')">Agregar</button>
+                                </div>
+                            </div>
+
+                            <!-- Carousel Slide 6: Dorado Camo -->
+                            <div class="carousel-slide">
+                                <div class="carousel-product" data-product-id="6" data-product-name="Dorado Camo" data-product-price="16999" data-product-image="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=400&fit=crop">
+                                    <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=400&fit=crop" 
+                                         alt="Dorado Camo">
+                                    <div class="carousel-product-info">
+                                        <h4>Dorado Camo</h4>
+                                        <p class="carousel-product-price">$16,999 MXN</p>
+                                    </div>
+                                    <button class="carousel-product-btn" onclick="addToCart(6, 'Dorado Camo', 16999, 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=400&fit=crop')">Agregar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-btn carousel-next" id="carouselNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- CATEGORY CARDS -->
+            <div class="category-cards animate-on-scroll">
+                <!-- Wetsuits Card -->
+                <a href="catalog.html?cat=wetsuits" class="category-card">
+                    <div class="category-card-image">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop" 
+                             alt="Wetsuits Collection">
+                        <div class="category-card-overlay">
+                            <div class="category-card-content">
+                                <h3>Wetsuit Range</h3>
+                                <p>Colección completa de trajes de neopreno profesionales</p>
+                                <span class="category-btn">Ver Más <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Essential Gear Card -->
+                <a href="catalog.html?cat=masks" class="category-card">
+                    <div class="category-card-image">
+                        <img src="https://images.unsplash.com/photo-1682687982501-1e58ab814714?w=800&h=600&fit=crop" 
+                             alt="Máscaras y Equipo Esencial">
+                        <div class="category-card-overlay">
+                            <div class="category-card-content">
+                                <h3>Máscaras & Accesorios</h3>
+                                <p>Equipo esencial para tu seguridad y comodidad</p>
+                                <span class="category-btn">Ver Más <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US / WHY CHOOSE US SECTION -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <!-- Left Column: Image -->
+                <div class="about-image animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1682687220795-796d3f6f7000?w=800&h=1000&fit=crop" 
+                         alt="Buceador profesional con equipo Rob Allen">
+                    <div class="about-image-overlay">
+                        <div class="stat-box">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Años de Experiencia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Content -->
+                <div class="about-text animate-on-scroll">
+                    <span class="about-label" data-i18n="about.label">¿Por qué elegirnos?</span>
+                    <h2 class="about-title" data-i18n="about.title">Pasión por el Buceo, Compromiso con la Calidad</h2>
+                    <div class="about-divider"></div>
+                    
+                    <p class="about-description" data-i18n="about.description1">
+                        En <strong>Rob Allen Mexico</strong>, somos más que una tienda de equipo. Somos una comunidad 
+                        de apasionados por la pesca submarina que entiende las necesidades de cada cazador submarino.
+                    </p>
+                    
+                    <p class="about-description" data-i18n="about.description2">
+                        Ofrecemos únicamente productos de la más alta calidad, probados en las condiciones más 
+                        exigentes del océano. Nuestro equipo está diseñado para durar y rendir al máximo nivel.
+                    </p>
+
+                    <div class="about-features">
+                        <div class="about-feature-item">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Garantía Total</h4>
+                                <p>Respaldamos cada producto</p>
+                            </div>
+                        </div>
+
+                        <div class="about-feature-item">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h4>Comunidad Activa</h4>
+                                <p>Miles de buceadores confían en nosotros</p>
+                            </div>
+                        </div>
+
+                        <div class="about-feature-item">
+                            <div class="feature-icon-wrapper">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div>
+                                <h4>Asesoría Experta</h4>
+                                <p>Te ayudamos a elegir lo mejor</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary">Conoce Más Sobre Nosotros</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate-on-scroll" data-i18n="testimonials.title">Lo Que Dicen Nuestros Clientes</h2>
+                <p class="section-subtitle animate-on-scroll" data-i18n="testimonials.subtitle">Experiencias reales de cazadores submarinos profesionales</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "El Carbon Timberline cambió por completo mi forma de pescar. La precisión y potencia 
+                        son incomparables. He logrado capturas que antes parecían imposibles."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100&h=100&fit=crop" alt="Carlos Mendoza">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Carlos Mendoza</h4>
+                            <p class="author-role">Pescador Profesional - Cabo San Lucas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card animate-on-scroll delay-1">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "El servicio al cliente es excepcional. Me asesoraron perfectamente para elegir el 
+                        GT Triple y no pudo haber sido mejor elección. Calidad premium en todos los aspectos."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?w=100&h=100&fit=crop" alt="Ana Rodríguez">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Ana Rodríguez</h4>
+                            <p class="author-role">Instructora de Buceo - Cozumel</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card animate-on-scroll delay-2">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Llevo más de 10 años en la pesca submarina y el equipo Rob Allen es simplemente el mejor. 
+                        El Divers Light 1300L es imprescindible para mis inmersiones nocturnas."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Miguel Torres">
+                        </div>
+                        <div class="author-info">
+                            <h4 class="author-name">Miguel Torres</h4>
+                            <p class="author-role">Campeón Nacional - Veracruz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2 class="cta-title" data-i18n="cta.title">¿Listo para la Mejor Experiencia de Pesca Submarina?</h2>
+                <p class="cta-description" data-i18n="cta.description">
+                    Únete a nuestra comunidad y recibe ofertas exclusivas, consejos de expertos 
+                    y las últimas novedades en equipamiento profesional.
+                </p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-large" onclick="window.location.href='catalog.html'" data-i18n="cta.btn1">Ver Catálogo Completo</button>
+                    <button class="btn btn-outline btn-large" data-i18n="cta.btn2">Suscríbete al Newsletter</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Column 1: Logo & Info -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="https://www.roballenmexico.mx/wp-content/uploads/2021/06/ROB-ALLEN.png" alt="Rob Allen Mexico" class="footer-logo-image">
+                    </div>
+                    <p class="footer-description">
+                        Tu aliado en la pesca submarina desde 2009. Equipamiento profesional 
+                        para cazadores submarinos exigentes.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products">Productos</a></li>
+                        <li><a href="#about">Sobre Nosotros</a></li>
+                        <li><a href="#">Blog & Consejos</a></li>
+                        <li><a href="#">Garantía</a></li>
+                        <li><a href="#">Envíos y Devoluciones</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Categories -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Categorías</h4>
+                    <ul class="footer-links">
+                        <li><a href="catalog.html">Arpones</a></li>
+                        <li><a href="catalog.html">Focos de Buceo</a></li>
+                        <li><a href="catalog.html">Accesorios</a></li>
+                        <li><a href="catalog.html">Líneas y Fleches</a></li>
+                        <li><a href="catalog.html">Equipamiento Completo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div class="footer-column">
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Playa del Carmen, Q. Roo<br>México</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+52 (984) 123-4567</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@roballenmexico.mx</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Rob Allen Mexico. Todos los derechos reservados.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Política de Privacidad</a>
+                    <span>|</span>
+                    <a href="#">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Popup -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-popup" id="cartPopup">
+            <div class="cart-header">
+                <h2 class="cart-title">Carrito de Compras</h2>
+                <button class="cart-close" id="cartClose" aria-label="Close Cart">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-body" id="cartBody">
+                <div class="cart-empty" id="cartEmpty">
+                    <i class="fas fa-shopping-cart"></i>
+                    <p>Tu carrito está vacío</p>
+                    <span>Agrega productos para comenzar</span>
+                </div>
+                <div class="cart-items" id="cartItems">
+                    <!-- Cart items will be inserted here -->
+                </div>
+            </div>
+            <div class="cart-footer" id="cartFooter" style="display: none;">
+                <div class="cart-total">
+                    <div class="cart-total-row">
+                        <span>Subtotal</span>
+                        <span id="cartSubtotal">$0.00 MXN</span>
+                    </div>
+                    <div class="cart-total-row">
+                        <span>Envío</span>
+                        <span>Gratis</span>
+                    </div>
+                    <div class="cart-total-row cart-total-final">
+                        <span>Total</span>
+                        <span id="cartTotal">$0.00 MXN</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-cart-checkout" id="cartCheckout">
+                    Proceder al Checkout
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js?v=3.0"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,47 @@
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (si se agregan en el futuro)
+node_modules/
+package-lock.json
+
+# Cache y temporales
+.cache/
+*.tmp
+*.log
+
+# Archivos de sistema Windows
+*.lnk
+*.url
+
+# Archivos de configuración local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build files
+dist/
+build/
+*.min.js
+*.min.css
+
+# Video files grandes (si no se quieren subir)
+# videos/
+# *.mp4
+# *.mov
+
+# Otros
+*.zip
+*.rar
+*.7z
+
