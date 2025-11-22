@@ -23,8 +23,15 @@
     <header class="header" id="header">
         <div class="container">
             <div class="nav-wrapper">
-                <!-- Left Menu -->
-                <nav class="nav-menu nav-menu-left" id="navMenuLeft">
+                <!-- Logo (Left) -->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="https://www.roballenmexico.mx/wp-content/uploads/2021/06/ROB-ALLEN.png" alt="Rob Allen Mexico" class="logo-image">
+                    </a>
+                </div>
+
+                <!-- Center Menu -->
+                <nav class="nav-menu nav-menu-center" id="navMenuCenter">
                     <ul>
                         <li><a href="index.html" class="nav-link" data-i18n="nav.home">Inicio</a></li>
                         <li class="has-dropdown">
@@ -82,28 +89,13 @@
                                 </div>
                             </div>
                         </li>
+                        <li><a href="distribuidores.html" class="nav-link" data-i18n="nav.distributors">Distribuidores</a></li>
+                        <li><a href="#footer" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
                     </ul>
                 </nav>
 
-                <!-- Logo (Center) -->
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="https://www.roballenmexico.mx/wp-content/uploads/2021/06/ROB-ALLEN.png" alt="Rob Allen Mexico" class="logo-image">
-                    </a>
-                </div>
-
-                <!-- Right Side Container -->
-                <div class="header-right-container">
-                    <!-- Right Menu -->
-                    <nav class="nav-menu nav-menu-right" id="navMenuRight">
-                        <ul>
-                            <li><a href="distribuidores.html" class="nav-link" data-i18n="nav.distributors">Distribuidores</a></li>
-                            <li><a href="#footer" class="nav-link" data-i18n="nav.contact">Contacto</a></li>
-                        </ul>
-                    </nav>
-
-                    <!-- Right Side Actions -->
-                    <div class="header-actions">
+                <!-- Right Side Actions -->
+                <div class="header-actions">
                     <!-- Language Selector (Desktop) -->
                     <div class="language-selector language-selector-desktop">
                         <button class="language-btn" id="languageBtnDesktop" aria-label="Select Language">
@@ -135,7 +127,6 @@
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-badge" id="cartBadge">0</span>
                     </button>
-                    </div>
                 </div>
 
                 <!-- Hamburger Menu -->
@@ -213,30 +204,29 @@
 
     <!-- HERO SECTION -->
     <section class="hero" id="hero">
-        <!-- Video Background from Vimeo -->
-        <div class="hero-video-wrapper">
-            <iframe 
-                src="https://player.vimeo.com/video/1139683855?background=1&autoplay=1&loop=1&muted=1&controls=0&playsinline=1" 
-                class="hero-video-iframe"
-                frameborder="0" 
-                allow="autoplay; fullscreen; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title fade-in-up" data-i18n="hero.title">ROB ALLEN MEXICO</h1>
-            <p class="hero-subtitle fade-in-up delay-1" data-i18n="hero.subtitle">Equipo de Pesca Submarina de Alto Rendimiento</p>
-            <p class="hero-description fade-in-up delay-2" data-i18n="hero.description">Arpones profesionales, focos de buceo y accesorios para cazadores submarinos exigentes</p>
-            <button class="btn btn-primary fade-in-up delay-3" id="heroCtaBtn" onclick="window.location.href='catalog.html'">
-                <span data-i18n="hero.cta">Explora Nuestros Productos</span>
-                <i class="fas fa-arrow-right"></i>
-            </button>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator">
-            <span></span>
+        <div class="hero-container">
+            <!-- Video Container -->
+            <div class="hero-video-container">
+                <div class="hero-video-wrapper">
+                    <iframe 
+                        src="https://player.vimeo.com/video/1139683855?background=1&autoplay=1&loop=1&muted=1&controls=0&playsinline=1" 
+                        class="hero-video-iframe"
+                        frameborder="0" 
+                        allow="autoplay; fullscreen; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="hero-overlay"></div>
+                <!-- Content inside video container -->
+                <div class="hero-content">
+                    <h1 class="hero-title fade-in-up" data-i18n="hero.title">ROB ALLEN MEXICO</h1>
+                    <p class="hero-subtitle fade-in-up delay-1" data-i18n="hero.subtitle">Equipo de Pesca Submarina de Alto Rendimiento</p>
+                    <button class="btn btn-primary fade-in-up delay-2" id="heroCtaBtn" onclick="window.location.href='catalog.html'">
+                        <span data-i18n="hero.cta">Explora Nuestros Productos</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
